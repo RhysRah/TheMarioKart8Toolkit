@@ -55,7 +55,7 @@
                 <ImageBrush ImageSource="Images/Checker.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TabControl x:Name="MainWindowTabControl" HorizontalAlignment="Left" Height="354" Margin="0,138,0,0" VerticalAlignment="Top" Width="940" BorderBrush="Transparent">
+        <TabControl x:Name="MainWindowTabControl" HorizontalAlignment="Left" Height="354" Margin="0,143,0,0" VerticalAlignment="Top" Width="940" BorderBrush="Transparent">
             <TabControl.Background>
                 <SolidColorBrush Color="Transparent" Opacity="0"/>
             </TabControl.Background>
@@ -71,11 +71,129 @@ Please bear in mind there will many updates will be released, so please update a
 Enjoy!
 
                         </TextBlock>
-                        </Label>
+                    </Label>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Visible">
-                <Grid></Grid>
+            <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Visible" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top">
+                <Grid>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,77,838.6,224.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,53,838.6,248.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,29,838.6,272.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,124,838.6,177.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,268,838.6,33.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,292,838.6,9.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,101,838.6,200.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,172,838.6,129.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,220,838.6,81.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,196,838.6,105.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,244,838.6,57.6"/>
+                    <Label Content="Label" Height="24" Width="85" Margin="10,148,838.6,153.6"/>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="97,0,0,0" SelectionChanged="CharacterChanged">
+                        <ListBoxItem Content="Baby Mario"/>
+                        <ListBoxItem Content="Baby Luigi"/>
+                        <ListBoxItem Content="Baby Peach"/>
+                        <ListBoxItem Content="Baby Daisy"/>
+                        <ListBoxItem Content="Baby Rosalina"/>
+                        <ListBoxItem Content="Lemmy"/>
+                        <ListBoxItem Content="Toad"/>
+                        <ListBoxItem Content="Koopa Troopa"/>
+                        <ListBoxItem Content="Shy Guy"/>
+                        <ListBoxItem Content="Lakitu"/>
+                        <ListBoxItem Content="Toadette"/>
+                        <ListBoxItem Content="Wendy"/>
+                        <ListBoxItem Content="Larry"/>
+                        <ListBoxItem Content="Peach"/>
+                        <ListBoxItem Content="Daisy"/>
+                        <ListBoxItem Content="Yoshi"/>
+                        <ListBoxItem Content="Mario"/>
+                        <ListBoxItem Content="Luigi"/>
+                        <ListBoxItem Content="Ludwig"/>
+                        <ListBoxItem Content="Iggy"/>
+                        <ListBoxItem Content="Donkey Kong"/>
+                        <ListBoxItem Content="Waluigi"/>
+                        <ListBoxItem Content="Rosalina"/>
+                        <ListBoxItem Content="Roy"/>
+                        <ListBoxItem Content="Metal Mario"/>
+                        <ListBoxItem Content="Pink Gold Peach"/>
+                        <ListBoxItem Content="Bowser"/>
+                        <ListBoxItem Content="Wario"/>
+                        <ListBoxItem Content="Morton"/>
+                    </ComboBox>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="275,0,0,0">
+                        <ListBoxItem Content="Standard Kart"/>
+                        <ListBoxItem Content="Pipe Frame"/>
+                        <ListBoxItem Content="Mach 8"/>
+                        <ListBoxItem Content="Steel Driver"/>
+                        <ListBoxItem Content="Cat Cruiser"/>
+                        <ListBoxItem Content="Circuit Special"/>
+                        <ListBoxItem Content="Tri-Speeder"/>
+                        <ListBoxItem Content="Badwagon"/>
+                        <ListBoxItem Content="Prancer"/>
+                        <ListBoxItem Content="Biddybuggy/Buggybug"/>
+                        <ListBoxItem Content="Landship"/>
+                        <ListBoxItem Content="Sneeker/Bounder"/>
+                        <ListBoxItem Content="Sports Coupe/Sports Coupé"/>
+                        <ListBoxItem Content="Gold Standard/Gold Kart"/>
+                        <ListBoxItem Content="Standard Bike"/>
+                        <ListBoxItem Content="Comet"/>
+                        <ListBoxItem Content="Sport Bike"/>
+                        <ListBoxItem Content="The Duke"/>
+                        <ListBoxItem Content="Flame Rider"/>
+                        <ListBoxItem Content="Varmint"/>
+                        <ListBoxItem Content="Mr. Scooty/Mr Scooty"/>
+                        <ListBoxItem Content="Jet Bike"/>
+                        <ListBoxItem Content="Yoshi Bike"/>
+                        <ListBoxItem Content="Standard ATV/Standard Quad"/>
+                        <ListBoxItem Content="Wild Wiggler"/>
+                        <ListBoxItem Content="Teddy Buggy"/>
+                    </ComboBox>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="453,0,0,0">
+                        <ListBoxItem Content="Standard/Normal"/>
+                        <ListBoxItem Content="Monster"/>
+                        <ListBoxItem Content="Roller"/>
+                        <ListBoxItem Content="Slim"/>
+                        <ListBoxItem Content="Slick"/>
+                        <ListBoxItem Content="Metal"/>
+                        <ListBoxItem Content="Button"/>
+                        <ListBoxItem Content="Off-Road"/>
+                        <ListBoxItem Content="Sponge"/>
+                        <ListBoxItem Content="Wood/Wooden"/>
+                        <ListBoxItem Content="Cushion"/>
+                        <ListBoxItem Content="Blue Standard/Normal Blue"/>
+                        <ListBoxItem Content="Hot Monster/Funky Monster"/>
+                        <ListBoxItem Content="Azure Roller"/>
+                        <ListBoxItem Content="Crimson Slim"/>
+                        <ListBoxItem Content="Cyber Slick"/>
+                        <ListBoxItem Content="Retro Off-Road"/>
+                        <ListBoxItem Content="Gold Tires/Gold Wheels"/>
+                    </ComboBox>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="631,0,0,0">
+                        <ListBoxItem Content="Super Glider"/>
+                        <ListBoxItem Content="Cloud Glider"/>
+                        <ListBoxItem Content="Wario Wing"/>
+                        <ListBoxItem Content="Waddle Wing"/>
+                        <ListBoxItem Content="Peach Parasol"/>
+                        <ListBoxItem Content="Parachute"/>
+                        <ListBoxItem Content="Parafoil"/>
+                        <ListBoxItem Content="Flower Glider"/>
+                        <ListBoxItem Content="Bowser Kite"/>
+                        <ListBoxItem Content="Plane Glider"/>
+                        <ListBoxItem Content="MKTV Parafoil"/>
+                        <ListBoxItem Content="Gold Glider"/>
+                    </ComboBox>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,29,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,53,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,77,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,101,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,148,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,124,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,172,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,196,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,220,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,244,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,291,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,267,0,0"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Visible">
                 <Grid></Grid>
@@ -86,7 +204,6 @@ Enjoy!
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">
                 <Grid></Grid>
             </TabItem>
-            
         </TabControl>
         <Label Content="Homepage" HorizontalAlignment="Left" Margin="-135,63,0,0" VerticalAlignment="Top"/>
         <Label Content="Stats Calculator" HorizontalAlignment="Left" Margin="-145,171,0,0" VerticalAlignment="Top"/>

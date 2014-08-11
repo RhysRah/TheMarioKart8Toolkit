@@ -1,10 +1,14 @@
 ﻿Imports System.Windows.Threading
 Imports System.Windows.Media.Animation
 Imports System.Windows.Media.Effects
+Imports Newtonsoft.Json.Linq
+Imports System.IO
 Class MainWindow
     Dim Timer As DispatcherTimer
     Dim PanelOpen, PanelClose As DoubleAnimation
     Dim IsPanelOpen As Boolean
+    Dim VehicleParts As JObject
+#Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
         Timer = New DispatcherTimer
         AddHandler Timer.Tick, AddressOf TimerTick
@@ -17,6 +21,8 @@ Class MainWindow
 
         PanelClose = New DoubleAnimation(1140, 940, New Duration(New TimeSpan(0, 0, 0, 0, 500)))
         PanelClose.EasingFunction = New SineEase
+
+        VehicleParts = JObject.Parse(File.ReadAllText("partlist.json"))
     End Sub
 
     Private Sub TimerTick()
@@ -108,5 +114,10 @@ Class MainWindow
 
     Private Sub LabelClick(sender As Object, e As MouseEventArgs) Handles VisitThread.MouseEnter
         DirectCast(sender, Label).Foreground = Brushes.DodgerBlue
+    End Sub
+#End Region
+
+    Private Sub CharacterChanged(sender As Object, e As SelectionChangedEventArgs)
+
     End Sub
 End Class
