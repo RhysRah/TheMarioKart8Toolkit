@@ -118,6 +118,19 @@ Class MainWindow
 #End Region
 
     Private Sub CharacterChanged(sender As Object, e As SelectionChangedEventArgs)
-
+        Dim CharacterName As String
+        CharacterName = DirectCast(DirectCast(sender, ComboBox).SelectedItem, ListBoxItem).Content
+        CharSpeedGround.Content = VehicleParts(CharacterName)("SpeedGround")
+        CharSpeedWater.Content = VehicleParts(CharacterName)("SpeedWater")
+        CharSpeedAir.Content = VehicleParts(CharacterName)("SpeedAir")
+        CharSpeedAntigrav.Content = VehicleParts(CharacterName)("SpeedAntiGrav")
+        CharAccel.Content = VehicleParts(CharacterName)("Accel")
+        CharWeight.Content = VehicleParts(CharacterName)("Weight")
+        CharHandlingGround.Content = VehicleParts(CharacterName)("HandlingGround")
+        CharHandlingWater.Content = VehicleParts(CharacterName)("HandlingWater")
+        CharHandlingAir.Content = VehicleParts(CharacterName)("HandlingAir")
+        CharHandlingAntigrav.Content = VehicleParts(CharacterName)("HandlingAntiGrav")
+        CharTraction.Content = VehicleParts(CharacterName)("Traction")
+        CharMiniturbo.Content = VehicleParts(CharacterName)("MiniTurbo")
     End Sub
 End Class

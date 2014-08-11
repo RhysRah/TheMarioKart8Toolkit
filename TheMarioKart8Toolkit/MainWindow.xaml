@@ -76,18 +76,18 @@ Enjoy!
             </TabItem>
             <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Visible" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5">
                 <Grid>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,77,838.6,224.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,53,838.6,248.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,29,838.6,272.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,124,838.6,177.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,268,838.6,33.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,292,838.6,9.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,101,838.6,200.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,172,838.6,129.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,220,838.6,81.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,196,838.6,105.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,244,838.6,57.6"/>
-                    <Label Content="Label" Height="24" Width="85" Margin="10,148,838.6,153.6"/>
+                    <Label Content="Speed (Air)" Height="24" Width="85" Margin="10,77,838.6,224.6"/>
+                    <Label Content="Speed (Water)" Height="24" Width="85" Margin="10,53,838.6,248.6"/>
+                    <Label Content="Speed (Ground)" Height="24" Width="85" Margin="10,29,838.6,272.6"/>
+                    <Label Content="Acceleration" Height="24" Width="85" Margin="10,124,838.6,177.6"/>
+                    <Label Content="Traction" Height="24" Width="85" Margin="10,268,838.6,33.6"/>
+                    <Label Content="Mini-Turbo" Height="24" Width="85" Margin="10,292,838.6,9.6"/>
+                    <Label Content="Speed (Anti-Gravity)" Height="24" Width="85" Margin="10,101,838.6,200.6"/>
+                    <Label Content="Handling (Ground)" Height="24" Width="85" Margin="10,172,838.6,129.6"/>
+                    <Label Content="Handling (Air)" Height="24" Width="85" Margin="10,220,838.6,81.6"/>
+                    <Label Content="Handling (Water)" Height="24" Width="85" Margin="10,196,838.6,105.6"/>
+                    <Label Content="Handling (Anti-Gravity)" Height="24" Width="85" Margin="10,244,838.6,57.6"/>
+                    <Label Content="Weight" Height="24" Width="85" Margin="10,148,838.6,153.6"/>
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="97,0,0,0" SelectionChanged="CharacterChanged">
                         <ListBoxItem Content="Baby Mario"/>
                         <ListBoxItem Content="Baby Luigi"/>
