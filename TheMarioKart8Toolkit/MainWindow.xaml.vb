@@ -117,6 +117,7 @@ Class MainWindow
     End Sub
 #End Region
 
+#Region "Stats Calculator"
     Private Sub CharacterChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim CharacterName As String
         CharacterName = DirectCast(DirectCast(sender, ComboBox).SelectedItem, ListBoxItem).Content
@@ -222,4 +223,5 @@ Class MainWindow
                 DirectCast(sender, ProgressBar).Foreground = Brushes.Green
         End Select
     End Sub
+#End Region
 End Class
