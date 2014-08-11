@@ -76,19 +76,19 @@ Enjoy!
             </TabItem>
             <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Visible" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5">
                 <Grid>
-                    <Label Content="Speed (Air)" Height="24" Width="85" Margin="10,77,838.6,224.6"/>
-                    <Label Content="Speed (Water)" Height="24" Width="85" Margin="10,53,838.6,248.6"/>
-                    <Label Content="Speed (Ground)" Height="24" Width="85" Margin="10,29,838.6,272.6"/>
-                    <Label Content="Acceleration" Height="24" Width="85" Margin="10,124,838.6,177.6"/>
-                    <Label Content="Traction" Height="24" Width="85" Margin="10,268,838.6,33.6"/>
-                    <Label Content="Mini-Turbo" Height="24" Width="85" Margin="10,292,838.6,9.6"/>
-                    <Label Content="Speed (Anti-Gravity)" Height="24" Width="85" Margin="10,101,838.6,200.6"/>
-                    <Label Content="Handling (Ground)" Height="24" Width="85" Margin="10,172,838.6,129.6"/>
-                    <Label Content="Handling (Air)" Height="24" Width="85" Margin="10,220,838.6,81.6"/>
-                    <Label Content="Handling (Water)" Height="24" Width="85" Margin="10,196,838.6,105.6"/>
-                    <Label Content="Handling (Anti-Gravity)" Height="24" Width="85" Margin="10,244,838.6,57.6"/>
-                    <Label Content="Weight" Height="24" Width="85" Margin="10,148,838.6,153.6"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="97,0,0,0" SelectionChanged="CharacterChanged">
+                    <Label Content="Speed (Air)" Height="24" Margin="10,77,774,223"/>
+                    <Label Content="Speed (Water)" Height="24" Margin="10,53,774,247"/>
+                    <Label Content="Speed (Ground)" Height="24" Margin="10,29,774,271"/>
+                    <Label Content="Acceleration" Height="24" Margin="10,124,774,176"/>
+                    <Label Content="Traction" Height="24" Margin="10,268,774,32"/>
+                    <Label Content="Mini-Turbo" Height="24" Margin="10,292,774,8"/>
+                    <Label Content="Speed (Anti-Gravity)" Height="24" Margin="10,101,774,199"/>
+                    <Label Content="Handling (Ground)" Height="24" Margin="10,172,774,128"/>
+                    <Label Content="Handling (Air)" Height="24" Margin="10,220,774,80"/>
+                    <Label Content="Handling (Water)" Height="24" Margin="10,196,774,104"/>
+                    <Label Content="Handling (Anti-Gravity)" Height="24" Margin="10,244,774,56"/>
+                    <Label Content="Weight" Height="24" Margin="10,148,774,152"/>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="147,0,0,0" SelectionChanged="CharacterChanged">
                         <ListBoxItem Content="Baby Mario"/>
                         <ListBoxItem Content="Baby Luigi"/>
                         <ListBoxItem Content="Baby Peach"/>
@@ -119,7 +119,7 @@ Enjoy!
                         <ListBoxItem Content="Wario"/>
                         <ListBoxItem Content="Morton"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="275,0,0,0">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="313,0,0,0" SelectionChanged="BodyChanged">
                         <ListBoxItem Content="Standard Kart"/>
                         <ListBoxItem Content="Pipe Frame"/>
                         <ListBoxItem Content="Mach 8"/>
@@ -147,7 +147,7 @@ Enjoy!
                         <ListBoxItem Content="Wild Wiggler"/>
                         <ListBoxItem Content="Teddy Buggy"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="453,0,0,0">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="478,0,0,0" SelectionChanged="WheelsChanged">
                         <ListBoxItem Content="Standard/Normal"/>
                         <ListBoxItem Content="Monster"/>
                         <ListBoxItem Content="Roller"/>
@@ -167,7 +167,7 @@ Enjoy!
                         <ListBoxItem Content="Retro Off-Road"/>
                         <ListBoxItem Content="Gold Tires/Gold Wheels"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="173" Margin="631,0,0,0">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="643,0,0,0" SelectionChanged="GliderChanged">
                         <ListBoxItem Content="Super Glider"/>
                         <ListBoxItem Content="Cloud Glider"/>
                         <ListBoxItem Content="Wario Wing"/>
@@ -181,66 +181,66 @@ Enjoy!
                         <ListBoxItem Content="MKTV Parafoil"/>
                         <ListBoxItem Content="Gold Glider"/>
                     </ComboBox>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,29,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,53,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,77,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,101,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,148,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,124,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,172,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,196,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,220,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,244,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,291,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Margin="824,267,0,0"/>
-                    <Label x:Name="CharSpeedAir" Content="Label" Height="24" Margin="97,77,664,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharSpeedWater" Content="Label" Height="24" Margin="97,53,664,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharSpeedGround" Content="Label" Height="24" Margin="97,29,664,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharAccel" Content="Label" Height="24" Margin="97,124,664,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharTraction" Content="Label" Height="24" Margin="97,268,664,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharMiniturbo" Content="Label" Height="24" Margin="97,292,664,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharSpeedAntigrav" Content="Label" Height="24" Margin="97,101,664,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharHandlingGround" Content="Label" Height="24" Margin="97,172,664,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharHandlingAir" Content="Label" Height="24" Margin="97,220,664,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharHandlingWater" Content="Label" Height="24" Margin="97,196,664,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharHandlingAntigrav" Content="Label" Height="24" Margin="97,244,664,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="CharWeight" Content="Label" Height="24" Margin="97,148,664,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodySpeedAir" Content="Label" Height="24" Margin="275,77,486,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodySpeedWater" Content="Label" Height="24" Margin="275,53,486,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodySpeedGround" Content="Label" Height="24" Margin="275,29,486,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyAccel" Content="Label" Height="24" Margin="275,124,486,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyTraction" Content="Label" Height="24" Margin="275,268,486,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyMiniturbo" Content="Label" Height="24" Margin="275,292,486,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodySpeedAntigrav" Content="Label" Height="24" Margin="275,101,486,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyHandlingGround" Content="Label" Height="24" Margin="275,172,486,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyHandlingAir" Content="Label" Height="24" Margin="275,220,486,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyHandlingWater" Content="Label" Height="24" Margin="275,196,486,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyHandlingAntigrav" Content="Label" Height="24" Margin="275,244,486,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="BodyWeight" Content="Label" Height="24" Margin="275,148,486,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelSpeedAir" Content="Label" Height="24" Margin="453,77,308,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelSpeedWater" Content="Label" Height="24" Margin="453,53,308,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelSpeedGround" Content="Label" Height="24" Margin="453,29,308,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelAccel" Content="Label" Height="24" Margin="453,124,308,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelTraction" Content="Label" Height="24" Margin="453,268,308,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelMiniturbo" Content="Label" Height="24" Margin="453,292,308,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelSpeedAntigrav" Content="Label" Height="24" Margin="453,101,308,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelHandlingGround" Content="Label" Height="24" Margin="453,172,308,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelHandlingAir" Content="Label" Height="24" Margin="453,220,308,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelHandlingWater" Content="Label" Height="24" Margin="453,196,308,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelHandlingAntigrav" Content="Label" Height="24" Margin="453,244,308,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="WheelWeight" Content="Label" Height="24" Margin="453,148,308,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderSpeedAir" Content="Label" Height="24" Margin="631,77,130,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderSpeedWater" Content="Label" Height="24" Margin="631,53,130,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderSpeedGround" Content="Label" Height="24" Margin="631,29,130,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderAccel" Content="Label" Height="24" Margin="631,124,130,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderTraction" Content="Label" Height="24" Margin="631,268,130,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderMiniturbo" Content="Label" Height="24" Margin="631,292,130,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderSpeedAntigrav" Content="Label" Height="24" Margin="631,101,130,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderHandlingGround" Content="Label" Height="24" Margin="631,172,130,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderHandlingAir" Content="Label" Height="24" Margin="631,220,130,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderHandlingWater" Content="Label" Height="24" Margin="631,196,130,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderHandlingAntigrav" Content="Label" Height="24" Margin="631,244,130,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="GliderWeight" Content="Label" Height="24" Margin="631,148,130,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,29,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,53,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,77,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,101,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,148,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,124,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,172,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,196,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,220,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,244,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,291,0,0"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,267,0,0"/>
+                    <Label x:Name="CharSpeedAir" Content="0" Height="24" Margin="147,77,626,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharSpeedWater" Content="0" Height="24" Margin="147,53,626,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharSpeedGround" Content="0" Height="24" Margin="147,29,626,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharAccel" Content="0" Height="24" Margin="147,124,626,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharTraction" Content="0" Height="24" Margin="147,268,626,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharMiniturbo" Content="0" Height="24" Margin="147,292,626,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharSpeedAntigrav" Content="0" Height="24" Margin="147,101,626,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharHandlingGround" Content="0" Height="24" Margin="147,172,626,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharHandlingAir" Content="0" Height="24" Margin="147,220,626,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharHandlingWater" Content="0" Height="24" Margin="147,196,626,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharHandlingAntigrav" Content="0" Height="24" Margin="147,244,626,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="CharWeight" Content="0" Height="24" Margin="147,148,626,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodySpeedAir" Content="0" Height="24" Margin="313,77,461,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodySpeedWater" Content="0" Height="24" Margin="313,53,461,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodySpeedGround" Content="0" Height="24" Margin="313,29,461,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyAccel" Content="0" Height="24" Margin="313,124,461,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyTraction" Content="0" Height="24" Margin="313,268,461,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyMiniturbo" Content="0" Height="24" Margin="313,292,461,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodySpeedAntigrav" Content="0" Height="24" Margin="313,101,461,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyHandlingGround" Content="0" Height="24" Margin="313,172,461,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyHandlingAir" Content="0" Height="24" Margin="313,220,461,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyHandlingWater" Content="0" Height="24" Margin="313,196,461,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyHandlingAntigrav" Content="0" Height="24" Margin="313,244,461,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="BodyWeight" Content="0" Height="24" Margin="313,148,461,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelSpeedAir" Content="0" Height="24" Margin="478,77,295,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelSpeedWater" Content="0" Height="24" Margin="478,53,295,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelSpeedGround" Content="0" Height="24" Margin="478,29,295,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelAccel" Content="0" Height="24" Margin="478,124,295,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelTraction" Content="0" Height="24" Margin="478,268,295,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelMiniturbo" Content="0" Height="24" Margin="478,292,295,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelSpeedAntigrav" Content="0" Height="24" Margin="478,101,295,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelHandlingGround" Content="0" Height="24" Margin="478,172,295,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelHandlingAir" Content="0" Height="24" Margin="478,220,295,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelHandlingWater" Content="0" Height="24" Margin="478,196,295,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelHandlingAntigrav" Content="0" Height="24" Margin="478,244,295,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="WheelWeight" Content="0" Height="24" Margin="478,148,295,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedAir" Content="0" Height="24" Margin="643,77,130,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedWater" Content="0" Height="24" Margin="643,53,130,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedGround" Content="0" Height="24" Margin="643,29,130,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderAccel" Content="0" Height="24" Margin="643,124,130,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderTraction" Content="0" Height="24" Margin="643,268,130,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderMiniturbo" Content="0" Height="24" Margin="643,292,130,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedAntigrav" Content="0" Height="24" Margin="643,101,130,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingGround" Content="0" Height="24" Margin="643,172,130,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingAir" Content="0" Height="24" Margin="643,220,130,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingWater" Content="0" Height="24" Margin="643,196,130,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingAntigrav" Content="0" Height="24" Margin="643,244,130,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderWeight" Content="0" Height="24" Margin="643,148,130,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Visible">
