@@ -92,7 +92,7 @@ Class MainWindow
         System.Diagnostics.Process.Start("http://www.mariokartwii.com/threads/139519-The-Mario-Kart-8-App")
     End Sub
 
-    Private Sub HomepageClick(sender As Object, e As MouseButtonEventArgs) Handles HomepageIcon.MouseUp
+    Private Sub HomepageClick(sender As Object, e As MouseButtonEventArgs) Handles HomepageIcon.MouseLeftButtonDown
         MainWindowTabControl.SelectedIndex = 0
     End Sub
 
@@ -120,78 +120,89 @@ Class MainWindow
     Private Sub CharacterChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim CharacterName As String
         CharacterName = DirectCast(DirectCast(sender, ComboBox).SelectedItem, ListBoxItem).Content
-        CharSpeedGround.Content = VehicleParts(CharacterName)("SpeedGround")
-        CharSpeedWater.Content = VehicleParts(CharacterName)("SpeedWater")
-        CharSpeedAir.Content = VehicleParts(CharacterName)("SpeedAir")
-        CharSpeedAntigrav.Content = VehicleParts(CharacterName)("SpeedAntiGrav")
-        CharAccel.Content = VehicleParts(CharacterName)("Accel")
-        CharWeight.Content = VehicleParts(CharacterName)("Weight")
-        CharHandlingGround.Content = VehicleParts(CharacterName)("HandlingGround")
-        CharHandlingWater.Content = VehicleParts(CharacterName)("HandlingWater")
-        CharHandlingAir.Content = VehicleParts(CharacterName)("HandlingAir")
-        CharHandlingAntigrav.Content = VehicleParts(CharacterName)("HandlingAntiGrav")
-        CharTraction.Content = VehicleParts(CharacterName)("Traction")
-        CharMiniturbo.Content = VehicleParts(CharacterName)("MiniTurbo")
+        CharSpeedGround.Content = VehicleParts(CharacterName)("SpeedGround").ToString()
+        CharSpeedWater.Content = VehicleParts(CharacterName)("SpeedWater").ToString()
+        CharSpeedAir.Content = VehicleParts(CharacterName)("SpeedAir").ToString()
+        CharSpeedAntigrav.Content = VehicleParts(CharacterName)("SpeedAntiGrav").ToString()
+        CharAccel.Content = VehicleParts(CharacterName)("Accel").ToString()
+        CharWeight.Content = VehicleParts(CharacterName)("Weight").ToString()
+        CharHandlingGround.Content = VehicleParts(CharacterName)("HandlingGround").ToString()
+        CharHandlingWater.Content = VehicleParts(CharacterName)("HandlingWater").ToString()
+        CharHandlingAir.Content = VehicleParts(CharacterName)("HandlingAir").ToString()
+        CharHandlingAntigrav.Content = VehicleParts(CharacterName)("HandlingAntiGrav").ToString()
+        CharTraction.Content = VehicleParts(CharacterName)("Traction").ToString()
+        CharMiniturbo.Content = VehicleParts(CharacterName)("MiniTurbo").ToString()
         CalculateAllParts()
     End Sub
 
     Private Sub BodyChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim BodyName As String
         BodyName = DirectCast(DirectCast(sender, ComboBox).SelectedItem, ListBoxItem).Content
-        BodySpeedGround.Content = VehicleParts(BodyName)("SpeedGround")
-        BodySpeedWater.Content = VehicleParts(BodyName)("SpeedWater")
-        BodySpeedAir.Content = VehicleParts(BodyName)("SpeedAir")
-        BodySpeedAntigrav.Content = VehicleParts(BodyName)("SpeedAntiGrav")
-        BodyAccel.Content = VehicleParts(BodyName)("Accel")
-        BodyWeight.Content = VehicleParts(BodyName)("Weight")
-        BodyHandlingGround.Content = VehicleParts(BodyName)("HandlingGround")
-        BodyHandlingWater.Content = VehicleParts(BodyName)("HandlingWater")
-        BodyHandlingAir.Content = VehicleParts(BodyName)("HandlingAir")
-        BodyHandlingAntigrav.Content = VehicleParts(BodyName)("HandlingAntiGrav")
-        BodyTraction.Content = VehicleParts(BodyName)("Traction")
-        BodyMiniturbo.Content = VehicleParts(BodyName)("MiniTurbo")
+        BodySpeedGround.Content = VehicleParts(BodyName)("SpeedGround").ToString()
+        BodySpeedWater.Content = VehicleParts(BodyName)("SpeedWater").ToString()
+        BodySpeedAir.Content = VehicleParts(BodyName)("SpeedAir").ToString()
+        BodySpeedAntigrav.Content = VehicleParts(BodyName)("SpeedAntiGrav").ToString()
+        BodyAccel.Content = VehicleParts(BodyName)("Accel").ToString()
+        BodyWeight.Content = VehicleParts(BodyName)("Weight").ToString()
+        BodyHandlingGround.Content = VehicleParts(BodyName)("HandlingGround").ToString()
+        BodyHandlingWater.Content = VehicleParts(BodyName)("HandlingWater").ToString()
+        BodyHandlingAir.Content = VehicleParts(BodyName)("HandlingAir").ToString()
+        BodyHandlingAntigrav.Content = VehicleParts(BodyName)("HandlingAntiGrav").ToString()
+        BodyTraction.Content = VehicleParts(BodyName)("Traction").ToString()
+        BodyMiniturbo.Content = VehicleParts(BodyName)("MiniTurbo").ToString()
         CalculateAllParts()
     End Sub
 
     Private Sub WheelsChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim WheelsName As String
         WheelsName = DirectCast(DirectCast(sender, ComboBox).SelectedItem, ListBoxItem).Content
-        WheelSpeedGround.Content = VehicleParts(WheelsName)("SpeedGround")
-        WheelSpeedWater.Content = VehicleParts(WheelsName)("SpeedWater")
-        WheelSpeedAir.Content = VehicleParts(WheelsName)("SpeedAir")
-        WheelSpeedAntigrav.Content = VehicleParts(WheelsName)("SpeedAntiGrav")
-        WheelAccel.Content = VehicleParts(WheelsName)("Accel")
-        WheelWeight.Content = VehicleParts(WheelsName)("Weight")
-        WheelHandlingGround.Content = VehicleParts(WheelsName)("HandlingGround")
-        WheelHandlingWater.Content = VehicleParts(WheelsName)("HandlingWater")
-        WheelHandlingAir.Content = VehicleParts(WheelsName)("HandlingAir")
-        WheelHandlingAntigrav.Content = VehicleParts(WheelsName)("HandlingAntiGrav")
-        WheelTraction.Content = VehicleParts(WheelsName)("Traction")
-        WheelMiniturbo.Content = VehicleParts(WheelsName)("MiniTurbo")
+        WheelSpeedGround.Content = VehicleParts(WheelsName)("SpeedGround").ToString()
+        WheelSpeedWater.Content = VehicleParts(WheelsName)("SpeedWater").ToString()
+        WheelSpeedAir.Content = VehicleParts(WheelsName)("SpeedAir").ToString()
+        WheelSpeedAntigrav.Content = VehicleParts(WheelsName)("SpeedAntiGrav").ToString()
+        WheelAccel.Content = VehicleParts(WheelsName)("Accel").ToString()
+        WheelWeight.Content = VehicleParts(WheelsName)("Weight").ToString()
+        WheelHandlingGround.Content = VehicleParts(WheelsName)("HandlingGround").ToString()
+        WheelHandlingWater.Content = VehicleParts(WheelsName)("HandlingWater").ToString()
+        WheelHandlingAir.Content = VehicleParts(WheelsName)("HandlingAir").ToString()
+        WheelHandlingAntigrav.Content = VehicleParts(WheelsName)("HandlingAntiGrav").ToString()
+        WheelTraction.Content = VehicleParts(WheelsName)("Traction").ToString()
+        WheelMiniturbo.Content = VehicleParts(WheelsName)("MiniTurbo").ToString()
         CalculateAllParts()
     End Sub
 
     Private Sub GliderChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim GliderName As String
         GliderName = DirectCast(DirectCast(sender, ComboBox).SelectedItem, ListBoxItem).Content
-        GliderSpeedGround.Content = VehicleParts(GliderName)("SpeedGround")
-        GliderSpeedWater.Content = VehicleParts(GliderName)("SpeedWater")
-        GliderSpeedAir.Content = VehicleParts(GliderName)("SpeedAir")
-        GliderSpeedAntigrav.Content = VehicleParts(GliderName)("SpeedAntiGrav")
-        GliderAccel.Content = VehicleParts(GliderName)("Accel")
-        GliderWeight.Content = VehicleParts(GliderName)("Weight")
-        GliderHandlingGround.Content = VehicleParts(GliderName)("HandlingGround")
-        GliderHandlingWater.Content = VehicleParts(GliderName)("HandlingWater")
-        GliderHandlingAir.Content = VehicleParts(GliderName)("HandlingAir")
-        GliderHandlingAntigrav.Content = VehicleParts(GliderName)("HandlingAntiGrav")
-        GliderTraction.Content = VehicleParts(GliderName)("Traction")
-        GliderMiniturbo.Content = VehicleParts(GliderName)("MiniTurbo")
+        GliderSpeedGround.Content = VehicleParts(GliderName)("SpeedGround").ToString()
+        GliderSpeedWater.Content = VehicleParts(GliderName)("SpeedWater").ToString()
+        GliderSpeedAir.Content = VehicleParts(GliderName)("SpeedAir").ToString()
+        GliderSpeedAntigrav.Content = VehicleParts(GliderName)("SpeedAntiGrav").ToString()
+        GliderAccel.Content = VehicleParts(GliderName)("Accel").ToString()
+        GliderWeight.Content = VehicleParts(GliderName)("Weight").ToString()
+        GliderHandlingGround.Content = VehicleParts(GliderName)("HandlingGround").ToString()
+        GliderHandlingWater.Content = VehicleParts(GliderName)("HandlingWater").ToString()
+        GliderHandlingAir.Content = VehicleParts(GliderName)("HandlingAir").ToString()
+        GliderHandlingAntigrav.Content = VehicleParts(GliderName)("HandlingAntiGrav").ToString()
+        GliderTraction.Content = VehicleParts(GliderName)("Traction").ToString()
+        GliderMiniturbo.Content = VehicleParts(GliderName)("MiniTurbo").ToString()
         CalculateAllParts()
     End Sub
 
     Private Sub CalculateAllParts()
         Try
             SpeedGroundTotal.Value = Val(CharSpeedGround.Content) + Val(BodySpeedGround.Content) + Val(WheelSpeedGround.Content) + Val(GliderSpeedGround.Content)
+            SpeedAirTotal.Value = Val(CharSpeedAir.Content) + Val(BodySpeedAir.Content) + Val(WheelSpeedAir.Content) + Val(GliderSpeedAir.Content)
+            SpeedWaterTotal.Value = Val(CharSpeedWater.Content) + Val(BodySpeedWater.Content) + Val(WheelSpeedWater.Content) + Val(GliderSpeedWater.Content)
+            SpeedAntiGravTotal.Value = Val(CharSpeedAntigrav.Content) + Val(BodySpeedAntigrav.Content) + Val(WheelSpeedAntigrav.Content) + Val(GliderSpeedAntigrav.Content)
+            WeightTotal.Value = Val(CharWeight.Content) + Val(BodyWeight.Content) + Val(WheelWeight.Content) + Val(GliderWeight.Content)
+            MiniTurboTotal.Value = Val(CharMiniTurbo.Content) + Val(BodyMiniTurbo.Content) + Val(WheelMiniTurbo.Content) + Val(GliderMiniTurbo.Content)
+            TractionTotal.Value = Val(CharTraction.Content) + Val(BodyTraction.Content) + Val(WheelTraction.Content) + Val(GliderTraction.Content)
+            AccelTotal.Value = Val(Characcel.Content) + Val(Bodyaccel.Content) + Val(Wheelaccel.Content) + Val(Glideraccel.Content)
+            HandlingAirTotal.Value = Val(CharHandlingAir.Content) + Val(BodyHandlingAir.Content) + Val(WheelHandlingAir.Content) + Val(GliderHandlingAir.Content)
+            HandlinggroundTotal.Value = Val(CharHandlingground.Content) + Val(BodyHandlingGround.Content) + Val(WheelHandlingGround.Content) + Val(GliderHandlingGround.Content)
+            HandlingWaterTotal.Value = Val(CharHandlingWater.Content) + Val(BodyHandlingWater.Content) + Val(WheelHandlingWater.Content) + Val(GliderHandlingWater.Content)
+            HandlingAntigravTotal.Value = Val(CharHandlingAntigrav.Content) + Val(BodyHandlingAntigrav.Content) + Val(WheelHandlingAntigrav.Content) + Val(GliderHandlingAntigrav.Content)
 
         Catch ex As Exception
 
