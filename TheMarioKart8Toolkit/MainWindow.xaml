@@ -74,7 +74,7 @@ Enjoy!
                     </Label>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Collapsed" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5">
+            <TabItem x:Name="Stats_Calculator" Header="Calculator" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5">
                 <Grid>
                     <Label Content="Speed (Air)" Height="24" Margin="10,77,774,223"/>
                     <Label Content="Speed (Water)" Height="24" Margin="10,53,774,247"/>
@@ -246,7 +246,7 @@ Enjoy!
             <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Visible">
                 <Grid></Grid>
             </TabItem>
-            <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer" Visibility="Visible">
+            <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer">
                 <Grid></Grid>
             </TabItem>
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">

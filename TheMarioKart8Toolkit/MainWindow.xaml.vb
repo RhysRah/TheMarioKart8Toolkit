@@ -190,22 +190,36 @@ Class MainWindow
     End Sub
 
     Private Sub CalculateAllParts()
+
         Try
             SpeedGroundTotal.Value = Val(CharSpeedGround.Content) + Val(BodySpeedGround.Content) + Val(WheelSpeedGround.Content) + Val(GliderSpeedGround.Content)
             SpeedAirTotal.Value = Val(CharSpeedAir.Content) + Val(BodySpeedAir.Content) + Val(WheelSpeedAir.Content) + Val(GliderSpeedAir.Content)
             SpeedWaterTotal.Value = Val(CharSpeedWater.Content) + Val(BodySpeedWater.Content) + Val(WheelSpeedWater.Content) + Val(GliderSpeedWater.Content)
             SpeedAntiGravTotal.Value = Val(CharSpeedAntigrav.Content) + Val(BodySpeedAntigrav.Content) + Val(WheelSpeedAntigrav.Content) + Val(GliderSpeedAntigrav.Content)
             WeightTotal.Value = Val(CharWeight.Content) + Val(BodyWeight.Content) + Val(WheelWeight.Content) + Val(GliderWeight.Content)
-            MiniTurboTotal.Value = Val(CharMiniTurbo.Content) + Val(BodyMiniTurbo.Content) + Val(WheelMiniTurbo.Content) + Val(GliderMiniTurbo.Content)
+            MiniTurboTotal.Value = Val(CharMiniturbo.Content) + Val(BodyMiniturbo.Content) + Val(WheelMiniturbo.Content) + Val(GliderMiniturbo.Content)
             TractionTotal.Value = Val(CharTraction.Content) + Val(BodyTraction.Content) + Val(WheelTraction.Content) + Val(GliderTraction.Content)
-            AccelTotal.Value = Val(Characcel.Content) + Val(Bodyaccel.Content) + Val(Wheelaccel.Content) + Val(Glideraccel.Content)
+            AccelTotal.Value = Val(CharAccel.Content) + Val(BodyAccel.Content) + Val(WheelAccel.Content) + Val(GliderAccel.Content)
             HandlingAirTotal.Value = Val(CharHandlingAir.Content) + Val(BodyHandlingAir.Content) + Val(WheelHandlingAir.Content) + Val(GliderHandlingAir.Content)
-            HandlinggroundTotal.Value = Val(CharHandlingground.Content) + Val(BodyHandlingGround.Content) + Val(WheelHandlingGround.Content) + Val(GliderHandlingGround.Content)
+            HandlingGroundTotal.Value = Val(CharHandlingGround.Content) + Val(BodyHandlingGround.Content) + Val(WheelHandlingGround.Content) + Val(GliderHandlingGround.Content)
             HandlingWaterTotal.Value = Val(CharHandlingWater.Content) + Val(BodyHandlingWater.Content) + Val(WheelHandlingWater.Content) + Val(GliderHandlingWater.Content)
-            HandlingAntigravTotal.Value = Val(CharHandlingAntigrav.Content) + Val(BodyHandlingAntigrav.Content) + Val(WheelHandlingAntigrav.Content) + Val(GliderHandlingAntigrav.Content)
+            HandlingAntiGravTotal.Value = Val(CharHandlingAntigrav.Content) + Val(BodyHandlingAntigrav.Content) + Val(WheelHandlingAntigrav.Content) + Val(GliderHandlingAntigrav.Content)
 
         Catch ex As Exception
 
         End Try
+
+        
+    End Sub
+
+    Private Sub ProgressBarChanged(sender As Object, e As RoutedPropertyChangedEventArgs(Of Double)) Handles SpeedGroundTotal.ValueChanged, SpeedWaterTotal.ValueChanged, SpeedAirTotal.ValueChanged, SpeedAntiGravTotal.ValueChanged, AccelTotal.ValueChanged, WeightTotal.ValueChanged, HandlingGroundTotal.ValueChanged, HandlingWaterTotal.ValueChanged, HandlingAirTotal.ValueChanged, HandlingAntiGravTotal.ValueChanged, TractionTotal.ValueChanged, MiniTurboTotal.ValueChanged
+        Select Case DirectCast(sender, ProgressBar).Value
+            Case 0 To 2.5
+                DirectCast(sender, ProgressBar).Foreground = Brushes.Red
+            Case 2.5 To 4.5
+                DirectCast(sender, ProgressBar).Foreground = Brushes.Yellow
+            Case 4.5 To 6
+                DirectCast(sender, ProgressBar).Foreground = Brushes.Green
+        End Select
     End Sub
 End Class
