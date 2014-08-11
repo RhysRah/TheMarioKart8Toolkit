@@ -74,7 +74,7 @@ Enjoy!
                     </Label>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Visible" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top">
+            <TabItem x:Name="Stats_Calculator" Header="Calculator" Visibility="Visible" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5">
                 <Grid>
                     <Label Content="Label" Height="24" Width="85" Margin="10,77,838.6,224.6"/>
                     <Label Content="Label" Height="24" Width="85" Margin="10,53,838.6,248.6"/>
@@ -229,6 +229,18 @@ Enjoy!
                     <Label x:Name="WheelHandlingWater" Content="Label" Height="24" Margin="453,196,308,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="WheelHandlingAntigrav" Content="Label" Height="24" Margin="453,244,308,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="WheelWeight" Content="Label" Height="24" Margin="453,148,308,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedAir" Content="Label" Height="24" Margin="631,77,130,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedWater" Content="Label" Height="24" Margin="631,53,130,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedGround" Content="Label" Height="24" Margin="631,29,130,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderAccel" Content="Label" Height="24" Margin="631,124,130,176" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderTraction" Content="Label" Height="24" Margin="631,268,130,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderMiniturbo" Content="Label" Height="24" Margin="631,292,130,8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderSpeedAntigrav" Content="Label" Height="24" Margin="631,101,130,199" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingGround" Content="Label" Height="24" Margin="631,172,130,128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingAir" Content="Label" Height="24" Margin="631,220,130,80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingWater" Content="Label" Height="24" Margin="631,196,130,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderHandlingAntigrav" Content="Label" Height="24" Margin="631,244,130,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="GliderWeight" Content="Label" Height="24" Margin="631,148,130,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Visible">
