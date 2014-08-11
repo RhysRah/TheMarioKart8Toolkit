@@ -181,18 +181,18 @@ Enjoy!
                         <ListBoxItem Content="MKTV Parafoil"/>
                         <ListBoxItem Content="Gold Glider"/>
                     </ComboBox>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,29,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,53,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,77,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,101,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,148,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,124,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,172,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,196,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,220,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,244,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,291,0,0"/>
-                    <ProgressBar HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,267,0,0"/>
+                    <ProgressBar x:Name="SpeedGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,29,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,53,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,77,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,101,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="WeightTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,148,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="AccelTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,124,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,172,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,196,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,220,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,244,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="MiniTurboTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,291,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="TractionTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,267,0,0" Maximum="6"/>
                     <Label x:Name="CharSpeedAir" Content="0" Height="24" Margin="147,77,626,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="CharSpeedWater" Content="0" Height="24" Margin="147,53,626,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="CharSpeedGround" Content="0" Height="24" Margin="147,29,626,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>

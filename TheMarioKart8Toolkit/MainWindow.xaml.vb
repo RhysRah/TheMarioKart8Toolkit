@@ -132,6 +132,7 @@ Class MainWindow
         CharHandlingAntigrav.Content = VehicleParts(CharacterName)("HandlingAntiGrav")
         CharTraction.Content = VehicleParts(CharacterName)("Traction")
         CharMiniturbo.Content = VehicleParts(CharacterName)("MiniTurbo")
+        CalculateAllParts()
     End Sub
 
     Private Sub BodyChanged(sender As Object, e As SelectionChangedEventArgs)
@@ -149,7 +150,7 @@ Class MainWindow
         BodyHandlingAntigrav.Content = VehicleParts(BodyName)("HandlingAntiGrav")
         BodyTraction.Content = VehicleParts(BodyName)("Traction")
         BodyMiniturbo.Content = VehicleParts(BodyName)("MiniTurbo")
-
+        CalculateAllParts()
     End Sub
 
     Private Sub WheelsChanged(sender As Object, e As SelectionChangedEventArgs)
@@ -167,7 +168,7 @@ Class MainWindow
         WheelHandlingAntigrav.Content = VehicleParts(WheelsName)("HandlingAntiGrav")
         WheelTraction.Content = VehicleParts(WheelsName)("Traction")
         WheelMiniturbo.Content = VehicleParts(WheelsName)("MiniTurbo")
-
+        CalculateAllParts()
     End Sub
 
     Private Sub GliderChanged(sender As Object, e As SelectionChangedEventArgs)
@@ -185,5 +186,15 @@ Class MainWindow
         GliderHandlingAntigrav.Content = VehicleParts(GliderName)("HandlingAntiGrav")
         GliderTraction.Content = VehicleParts(GliderName)("Traction")
         GliderMiniturbo.Content = VehicleParts(GliderName)("MiniTurbo")
+        CalculateAllParts()
+    End Sub
+
+    Private Sub CalculateAllParts()
+        Try
+            SpeedGroundTotal.Value = Val(CharSpeedGround.Content) + Val(BodySpeedGround.Content) + Val(WheelSpeedGround.Content) + Val(GliderSpeedGround.Content)
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
