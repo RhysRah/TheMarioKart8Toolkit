@@ -222,4 +222,9 @@ Class MainWindow
                 DirectCast(sender, ProgressBar).Foreground = Brushes.Green
         End Select
     End Sub
+
+    Private Sub UpdateScores(sender As Object, e As TextChangedEventArgs) Handles Player1GP1A.TextChanged, Player1GP2A.TextChanged, Player1GP3A.TextChanged, Player2GP1A.TextChanged, Player2GP2A.TextChanged, Player2GP3A.TextChanged, Player3GP1A.TextChanged, Player3GP2A.TextChanged, Player3GP3A.TextChanged, Player4GP1A.TextChanged, Player4GP2A.TextChanged, Player4GP3A.TextChanged, Player5GP1A.TextChanged, Player5GP2A.TextChanged, Player5GP3A.TextChanged, Player6GP1A.TextChanged, Player6GP2A.TextChanged, Player6GP3A.TextChanged, Player1GP3B.TextChanged, Player1GP2B.TextChanged, Player1GP1B.TextChanged, Player2GP3B.TextChanged, Player2GP2B.TextChanged, Player2GP1B.TextChanged, Player3GP3B.TextChanged, Player3GP2B.TextChanged, Player3GP1B.TextChanged, Player4GP3B.TextChanged, Player4GP2B.TextChanged, Player4GP1B.TextChanged, Player5GP3B.TextChanged, Player5GP2B.TextChanged, Player5GP1B.TextChanged, Player6GP3B.TextChanged, Player6GP2B.TextChanged, Player6GP1B.TextChanged
+
+
+    End Sub
 End Class
