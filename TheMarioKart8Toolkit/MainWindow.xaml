@@ -323,6 +323,10 @@ Enjoy!
             </TabItem>
             <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="152*"/>
+                        <ColumnDefinition Width="315*"/>
+                    </Grid.ColumnDefinitions>
                     <Image x:Name="MushroomCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,8,0,0" Source="Images/MK8ATTV/Mushroom_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
                     <Image x:Name="FlowerCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,86,0,0" Source="Images/MK8ATTV/120px-Flower_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
                     <Image x:Name="StarCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,164,0,0" Source="Images/MK8ATTV/120px-Star_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
@@ -335,6 +339,24 @@ Enjoy!
                     <Image x:Name="Track2Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,86,0,0"/>
                     <Image x:Name="Track3Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,164,0,0"/>
                     <Image x:Name="Track4Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,243,0,0"/>
+                    <Image x:Name="Rank1Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,269,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank2Mii" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="65,217,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank3Mii" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="65,165,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank4Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,114,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank5Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,63,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank6Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,12,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Label x:Name="Rank1Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,12,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank1Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,12,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank2Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,63,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank2Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,63,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank3Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,114,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank3Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,114,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank4Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,165,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank4Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,165,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank5Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,216,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank5Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,216,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank6Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,270,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="Rank6Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,270,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">
