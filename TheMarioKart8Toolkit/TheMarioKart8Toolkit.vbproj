@@ -190,6 +190,47 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\MK8ATTV\120px-Banana_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\120px-Flower_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\120px-Leaf_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\120px-Lightning_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\120px-Shell_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\120px-Special_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\120px-Star_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\Mushroom_Cup_Logo_-_Mario_Kart_8.png" />
+    <Resource Include="Images\MK8ATTV\miiverse.png" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_3DS_DK_Jungle.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_3DS_Music_Park.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_3DS_Piranha_Plant_Slide.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Bone-Dry_Dunes.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Bowser%27s_Castle.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Cloudtop_Cruise.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Dolphin_Shoals.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_DS_Cheep_Cheep_Beach.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_DS_Tick-Tock_Clock.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_DS_Wario_Stadium.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Electrodrome.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_GBA_Mario_Circuit.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_GCN_Dry_Dry_Desert.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_GCN_Sherbet_Land.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Mario_Circuit.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Mario_Kart_Stadium.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Mount_Wario.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_N64_Rainbow_Road.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_N64_Royal_Raceway.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_N64_Toad%27s_Turnpike.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_N64_Yoshi_Valley.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Rainbow_Road.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Shy_Guy_Falls.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_SNES_Donut_Plains_3.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Sunshine_Airport.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Sweet_Sweet_Canyon.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Thwomp_Ruins.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Toad_Harbor.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Twisted_Mansion.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Water_Park.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Wii_Grumble_Volcano.PNG" />
+    <Resource Include="Images\MK8ATTV\Tracks\MK8-_Wii_Moo_Moo_Meadows.PNG" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

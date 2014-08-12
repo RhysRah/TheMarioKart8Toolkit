@@ -322,7 +322,20 @@ Enjoy!
                 </Grid>
             </TabItem>
             <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer">
-                <Grid></Grid>
+                <Grid>
+                    <Image x:Name="MushroomCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,8,0,0" Source="Images/MK8ATTV/Mushroom_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="FlowerCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,86,0,0" Source="Images/MK8ATTV/120px-Flower_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="StarCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,164,0,0" Source="Images/MK8ATTV/120px-Star_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="SpecialCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,243,0,0" Source="Images/MK8ATTV/120px-Special_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="ShellCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="84,8,0,0" Source="Images/MK8ATTV/120px-Shell_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="BananaCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="84,86,0,0" Source="Images/MK8ATTV/120px-Banana_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="LeafCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="84,164,0,0" Source="Images/MK8ATTV/120px-Leaf_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="LightningCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="84,243,0,0" Source="Images/MK8ATTV/120px-Lightning_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
+                    <Image x:Name="Track1Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,8,0,0"/>
+                    <Image x:Name="Track2Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,86,0,0"/>
+                    <Image x:Name="Track3Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,164,0,0"/>
+                    <Image x:Name="Track4Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,243,0,0"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">
                 <Grid></Grid>

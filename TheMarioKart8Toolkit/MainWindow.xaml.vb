@@ -4,12 +4,15 @@ Imports System.Windows.Media.Effects
 Imports Newtonsoft.Json.Linq
 Imports System.IO
 Class MainWindow
+
     Dim Timer As DispatcherTimer
     Dim PanelOpen, PanelClose As DoubleAnimation
     Dim IsPanelOpen As Boolean
     Dim VehicleParts As JObject
+    Dim PossibleTracks As Integer()
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
+        PossibleTracks = {0, 0, 0, 0, 0}
         Timer = New DispatcherTimer
         AddHandler Timer.Tick, AddressOf TimerTick
         Timer.Interval = New TimeSpan(0, 0, 0, 0, 10)
@@ -210,7 +213,7 @@ Class MainWindow
 
         End Try
 
-        
+
     End Sub
 
     Private Sub ProgressBarChanged(sender As Object, e As RoutedPropertyChangedEventArgs(Of Double)) Handles SpeedGroundTotal.ValueChanged, SpeedWaterTotal.ValueChanged, SpeedAirTotal.ValueChanged, SpeedAntiGravTotal.ValueChanged, AccelTotal.ValueChanged, WeightTotal.ValueChanged, HandlingGroundTotal.ValueChanged, HandlingWaterTotal.ValueChanged, HandlingAirTotal.ValueChanged, HandlingAntiGravTotal.ValueChanged, TractionTotal.ValueChanged, MiniTurboTotal.ValueChanged
@@ -233,11 +236,11 @@ Class MainWindow
             Player4TotalA.Text = Val(Player4GP1A.Text) + Val(Player4GP2A.Text) + Val(Player4GP3A.Text)
             Player5TotalA.Text = Val(Player5GP1A.Text) + Val(Player5GP2A.Text) + Val(Player5GP3A.Text)
             Player6TotalA.Text = Val(Player6GP1A.Text) + Val(Player6GP2A.Text) + Val(Player6GP3A.Text)
-            Player1TotalB.Text = Val(Player1GP1B.Text) + Val(Player1GP2B.Text) + Val(Player1GP3b.Text)
-            Player2TotalB.Text = Val(Player2GP1B.Text) + Val(Player2GP2b.Text) + Val(Player2GP3b.Text)
-            Player3TotalB.Text = Val(Player3GP1B.Text) + Val(Player3GP2B.Text) + Val(Player3GP3b.Text)
-            Player4TotalB.Text = Val(Player4GP1B.Text) + Val(Player4GP2B.Text) + Val(Player4GP3b.Text)
-            Player5TotalB.Text = Val(Player5GP1B.Text) + Val(Player5GP2B.Text) + Val(Player5GP3b.Text)
+            Player1TotalB.Text = Val(Player1GP1B.Text) + Val(Player1GP2B.Text) + Val(Player1GP3B.Text)
+            Player2TotalB.Text = Val(Player2GP1B.Text) + Val(Player2GP2B.Text) + Val(Player2GP3B.Text)
+            Player3TotalB.Text = Val(Player3GP1B.Text) + Val(Player3GP2B.Text) + Val(Player3GP3B.Text)
+            Player4TotalB.Text = Val(Player4GP1B.Text) + Val(Player4GP2B.Text) + Val(Player4GP3B.Text)
+            Player5TotalB.Text = Val(Player5GP1B.Text) + Val(Player5GP2B.Text) + Val(Player5GP3B.Text)
             Player6TotalB.Text = Val(Player6GP1B.Text) + Val(Player6GP2B.Text) + Val(Player6GP3B.Text)
             GP1TotalA.Text = Val(Player1GP1A.Text) + Val(Player2GP1A.Text) + Val(Player3GP1A.Text) + Val(Player4GP1A.Text) + Val(Player5GP1A.Text) + Val(Player6GP1A.Text)
             GP2TotalA.Text = Val(Player1GP2A.Text) + Val(Player2GP2A.Text) + Val(Player3GP2A.Text) + Val(Player4GP2A.Text) + Val(Player5GP2A.Text) + Val(Player6GP2A.Text)
@@ -266,6 +269,93 @@ Class MainWindow
         Catch ex As Exception
 
         End Try
+
+    End Sub
+
+    Private Sub CupSelect(sender As Object, e As MouseButtonEventArgs)
+        Dim TheImage As Image = DirectCast(sender, Image)
+        Select Case TheImage.Name
+            Case "MushroomCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mario_Kart_Stadium.png"))
+                PossibleTracks(1) = 27
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Water_Park.png"))
+                PossibleTracks(2) = 28
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Sweet_Sweet_Canyon.png"))
+                PossibleTracks(3) = 19
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Thwomp_Ruins.png"))
+                PossibleTracks(4) = 17
+
+            Case "FlowerCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mario_Circuit.png"))
+                PossibleTracks(1) = 16
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Toad_Harbor.png"))
+                PossibleTracks(2) = 18
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Twisted_Mansion.png"))
+                PossibleTracks(3) = 20
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Shy_Guy_Falls.png"))
+                PossibleTracks(4) = 21
+
+            Case "StarCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Sunshine_Airport.png"))
+                PossibleTracks(1) = 26
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Dolphin_Shoals.png"))
+                PossibleTracks(2) = 29
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Electrodrome.png"))
+                PossibleTracks(3) = 25
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mount_Wario.png"))
+                PossibleTracks(4) = 24
+
+            Case "SpecialCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Cloudtop_Cruise.png"))
+                PossibleTracks(1) = 23
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Bone-Dry_Dunes.png"))
+                PossibleTracks(2) = 22
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Bowser's_Castle.png"))
+                PossibleTracks(3) = 30
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Rainbow_Road.png"))
+                PossibleTracks(4) = 31
+
+            Case "ShellCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Wii_Moo_Moo_Meadows.png"))
+                PossibleTracks(1) = 33
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_GBA_Mario_Circuit.png"))
+                PossibleTracks(2) = 38
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_DS_Cheep_Cheep_Beach.png"))
+                PossibleTracks(3) = 36
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Toad's_Turnpike.png"))
+                PossibleTracks(4) = 35
+
+            Case "BananaCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_GCN_Dry_Dry_Desert.png"))
+                PossibleTracks(1) = 42
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_SNES_Donut_Plains_3.png"))
+                PossibleTracks(2) = 41
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Royal_Raceway.png"))
+                PossibleTracks(3) = 34
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_3DS_DK_Jungle.png"))
+                PossibleTracks(4) = 32
+
+            Case "LeafCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_DS_Wario_Stadium.png"))
+                PossibleTracks(1) = 46
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_GCN_Sherbet_Land.png"))
+                PossibleTracks(2) = 37
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_3DS_Music_Park.png"))
+                PossibleTracks(3) = 39
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Yoshi_Valley.png"))
+                PossibleTracks(4) = 45
+
+            Case "LightningCupPicture"
+                Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_DS_Tick-Tock_Clock.png"))
+                PossibleTracks(1) = 44
+                Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_3DS_Piranha_Plant_Slide.png"))
+                PossibleTracks(2) = 43
+                Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Wii_Grumble_Volcano.png"))
+                PossibleTracks(3) = 40
+                Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Rainbow_Road.png"))
+                PossibleTracks(4) = 47
+
+        End Select
 
     End Sub
 End Class

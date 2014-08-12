@@ -133,4 +133,127 @@
   <data name="Mario_Kart_70" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Fonts\Mario Kart 70.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="miiverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\miiverse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__3DS_DK_Jungle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_3ds_dk_jungle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__3DS_Music_Park" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_3ds_music_park.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__3DS_Piranha_Plant_Slide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_3ds_piranha_plant_slide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Bone_Dry_Dunes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_bone-dry_dunes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Bowser_s_Castle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_bowser's_castle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Cloudtop_Cruise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_cloudtop_cruise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Dolphin_Shoals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_dolphin_shoals.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__DS_Cheep_Cheep_Beach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_ds_cheep_cheep_beach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__DS_Tick_Tock_Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_ds_tick-tock_clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__DS_Wario_Stadium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_ds_wario_stadium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Electrodrome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_electrodrome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__GBA_Mario_Circuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_gba_mario_circuit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__GCN_Dry_Dry_Desert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_gcn_dry_dry_desert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__GCN_Sherbet_Land" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_gcn_sherbet_land.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Mario_Circuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_mario_circuit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Mario_Kart_Stadium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_mario_kart_stadium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Mount_Wario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_mount_wario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__N64_Rainbow_Road" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_n64_rainbow_road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__N64_Royal_Raceway" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_n64_royal_raceway.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__N64_Toad_s_Turnpike" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_n64_toad's_turnpike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__N64_Yoshi_Valley" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_n64_yoshi_valley.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Rainbow_Road" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_rainbow_road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Shy_Guy_Falls" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_shy_guy_falls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__SNES_Donut_Plains_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_snes_donut_plains_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Sunshine_Airport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_sunshine_airport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Sweet_Sweet_Canyon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_sweet_sweet_canyon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Thwomp_Ruins" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_thwomp_ruins.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Toad_Harbor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_toad_harbor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Twisted_Mansion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_twisted_mansion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Water_Park" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_water_park.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Wii_Grumble_Volcano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_wii_grumble_volcano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MK8__Wii_Moo_Moo_Meadows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\tracks\mk8-_wii_moo_moo_meadows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mushroom_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\mushroom_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Banana_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-banana_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Flower_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-flower_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Leaf_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-leaf_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Lightning_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-lightning_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Shell_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-shell_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Special_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-special_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_120px_Star_Cup_Logo___Mario_Kart_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\mk8attv\120px-star_cup_logo_-_mario_kart_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
