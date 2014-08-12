@@ -243,7 +243,7 @@ Enjoy!
                     <Label x:Name="GliderWeight" Content="0" Height="24" Margin="643,148,130,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Visible">
+            <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Collapsed">
                 <Grid>
                     <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Clan Name" VerticalAlignment="Top" Width="120" Margin="147,33,0,0"/>
                     <TextBox x:Name="TagA" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Tag" VerticalAlignment="Top" Width="120" Margin="147,61,0,0"/>
@@ -298,11 +298,11 @@ Enjoy!
                     <TextBox x:Name="Player6GP2B" HorizontalAlignment="Left" Height="23" Margin="653,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
                     <TextBox x:Name="Player6GP1B" HorizontalAlignment="Left" Height="23" Margin="716,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
                     <TextBox x:Name="Player1TotalA" HorizontalAlignment="Left" Height="23" Margin="346,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="346,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="346,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="346,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="346,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="346,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox x:Name="Player2TotalA" HorizontalAlignment="Left" Height="23" Margin="346,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox x:Name="Player3TotalA" HorizontalAlignment="Left" Height="23" Margin="346,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox x:Name="Player4TotalA" HorizontalAlignment="Left" Height="23" Margin="346,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox x:Name="Player5TotalA" HorizontalAlignment="Left" Height="23" Margin="346,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox x:Name="Player6TotalA" HorizontalAlignment="Left" Height="23" Margin="346,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
                     <TextBox x:Name="Player1TotalB" HorizontalAlignment="Left" Height="23" Margin="510,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
                     <TextBox x:Name="Player2TotalB" HorizontalAlignment="Left" Height="23" Margin="510,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
                     <TextBox x:Name="Player3TotalB" HorizontalAlignment="Left" Height="23" Margin="510,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
@@ -315,10 +315,10 @@ Enjoy!
                     <TextBox x:Name="GP3TotalB" HorizontalAlignment="Left" Height="23" Margin="591,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
                     <TextBox x:Name="GP2TotalB" HorizontalAlignment="Left" Height="23" Margin="653,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
                     <TextBox x:Name="GP1TotalB" HorizontalAlignment="Left" Height="23" Margin="716,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <Label Content="Tag vs Tag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="272,0,0,0" Height="109" Width="361" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
-                    <Label x:Name="ScoreA" Content="Label" HorizontalAlignment="Left" Margin="408,114,0,0" VerticalAlignment="Top" Height="79" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light"/>
-                    <Label x:Name="ScoreB" Content="Label" HorizontalAlignment="Left" Margin="456,114,0,0" VerticalAlignment="Top" Height="79" Width="49" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light"/>
-                    <Label x:Name="Diff" Content="Label" HorizontalAlignment="Left" Margin="408,198,0,0" VerticalAlignment="Top" Height="79" Width="97" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light"/>
+                    <Label x:Name="TagNames" Content="Tag vs Tag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="272,0,0,0" Height="109" Width="361" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
+                    <Label Foreground ="Blue" x:Name="ScoreA" Content="" HorizontalAlignment="Left" Margin="408,114,0,0" VerticalAlignment="Top" Height="79" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light" FontSize="20"/>
+                    <Label Foreground ="Red" x:Name="ScoreB" Content="" HorizontalAlignment="Left" Margin="456,114,0,0" VerticalAlignment="Top" Height="79" Width="49" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light" FontSize="20"/>
+                    <Label x:Name="Diff" Content="" HorizontalAlignment="Left" Margin="408,198,0,0" VerticalAlignment="Top" Height="79" Width="97" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer">

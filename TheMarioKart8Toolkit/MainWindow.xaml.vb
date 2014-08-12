@@ -223,13 +223,49 @@ Class MainWindow
                 DirectCast(sender, ProgressBar).Foreground = Brushes.Green
         End Select
     End Sub
-<<<<<<< HEAD
 #End Region
-=======
 
     Private Sub UpdateScores(sender As Object, e As TextChangedEventArgs) Handles Player1GP1A.TextChanged, Player1GP2A.TextChanged, Player1GP3A.TextChanged, Player2GP1A.TextChanged, Player2GP2A.TextChanged, Player2GP3A.TextChanged, Player3GP1A.TextChanged, Player3GP2A.TextChanged, Player3GP3A.TextChanged, Player4GP1A.TextChanged, Player4GP2A.TextChanged, Player4GP3A.TextChanged, Player5GP1A.TextChanged, Player5GP2A.TextChanged, Player5GP3A.TextChanged, Player6GP1A.TextChanged, Player6GP2A.TextChanged, Player6GP3A.TextChanged, Player1GP3B.TextChanged, Player1GP2B.TextChanged, Player1GP1B.TextChanged, Player2GP3B.TextChanged, Player2GP2B.TextChanged, Player2GP1B.TextChanged, Player3GP3B.TextChanged, Player3GP2B.TextChanged, Player3GP1B.TextChanged, Player4GP3B.TextChanged, Player4GP2B.TextChanged, Player4GP1B.TextChanged, Player5GP3B.TextChanged, Player5GP2B.TextChanged, Player5GP1B.TextChanged, Player6GP3B.TextChanged, Player6GP2B.TextChanged, Player6GP1B.TextChanged
+        Try
+            Player1TotalA.Text = Val(Player1GP1A.Text) + Val(Player1GP2A.Text) + Val(Player1GP3A.Text)
+            Player2TotalA.Text = Val(Player2GP1A.Text) + Val(Player2GP2A.Text) + Val(Player2GP3A.Text)
+            Player3TotalA.Text = Val(Player3GP1A.Text) + Val(Player3GP2A.Text) + Val(Player3GP3A.Text)
+            Player4TotalA.Text = Val(Player4GP1A.Text) + Val(Player4GP2A.Text) + Val(Player4GP3A.Text)
+            Player5TotalA.Text = Val(Player5GP1A.Text) + Val(Player5GP2A.Text) + Val(Player5GP3A.Text)
+            Player6TotalA.Text = Val(Player6GP1A.Text) + Val(Player6GP2A.Text) + Val(Player6GP3A.Text)
+            Player1TotalB.Text = Val(Player1GP1B.Text) + Val(Player1GP2B.Text) + Val(Player1GP3b.Text)
+            Player2TotalB.Text = Val(Player2GP1B.Text) + Val(Player2GP2b.Text) + Val(Player2GP3b.Text)
+            Player3TotalB.Text = Val(Player3GP1B.Text) + Val(Player3GP2B.Text) + Val(Player3GP3b.Text)
+            Player4TotalB.Text = Val(Player4GP1B.Text) + Val(Player4GP2B.Text) + Val(Player4GP3b.Text)
+            Player5TotalB.Text = Val(Player5GP1B.Text) + Val(Player5GP2B.Text) + Val(Player5GP3b.Text)
+            Player6TotalB.Text = Val(Player6GP1B.Text) + Val(Player6GP2B.Text) + Val(Player6GP3B.Text)
+            GP1TotalA.Text = Val(Player1GP1A.Text) + Val(Player2GP1A.Text) + Val(Player3GP1A.Text) + Val(Player4GP1A.Text) + Val(Player5GP1A.Text) + Val(Player6GP1A.Text)
+            GP2TotalA.Text = Val(Player1GP2A.Text) + Val(Player2GP2A.Text) + Val(Player3GP2A.Text) + Val(Player4GP2A.Text) + Val(Player5GP2A.Text) + Val(Player6GP2A.Text)
+            GP3TotalA.Text = Val(Player1GP3A.Text) + Val(Player2GP3A.Text) + Val(Player3GP3A.Text) + Val(Player4GP3A.Text) + Val(Player5GP3A.Text) + Val(Player6GP3A.Text)
+            GP1TotalB.Text = Val(Player1GP1B.Text) + Val(Player2GP1B.Text) + Val(Player3GP1B.Text) + Val(Player4GP1B.Text) + Val(Player5GP1B.Text) + Val(Player6GP1B.Text)
+            GP2TotalB.Text = Val(Player1GP2B.Text) + Val(Player2GP2B.Text) + Val(Player3GP2B.Text) + Val(Player4GP2B.Text) + Val(Player5GP2B.Text) + Val(Player6GP2B.Text)
+            GP3TotalB.Text = Val(Player1GP3B.Text) + Val(Player2GP3B.Text) + Val(Player3GP3B.Text) + Val(Player4GP3B.Text) + Val(Player5GP3B.Text) + Val(Player6GP3B.Text)
+            ScoreA.Content = Val(GP1TotalA.Text) + Val(GP2TotalA.Text) + Val(GP3TotalA.Text)
+            ScoreB.Content = Val(GP1TotalB.Text) + Val(GP2TotalB.Text) + Val(GP3TotalB.Text)
 
+            If Val(ScoreA.Content) > Val(ScoreB.Content) Then
+                Diff.Content = ChrW(&HF062) & (Val(ScoreA.Content) - Val(ScoreB.Content)).ToString & ChrW(&HF063)
+                Diff.Foreground = Brushes.Blue
+            Else
+                Diff.Content = ChrW(&HF063) & (Val(ScoreB.Content) - Val(ScoreA.Content)).ToString & ChrW(&HF062)
+                Diff.Foreground = Brushes.Red
+            End If
+        Catch ex As Exception
+        End Try
 
     End Sub
->>>>>>> origin/master
+
+    Private Sub TagChanged(sender As Object, e As TextChangedEventArgs) Handles TagA.TextChanged, TagB.TextChanged
+        Try
+            TagNames.Content = TagA.Text & " Vs " & TagB.Text
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class
