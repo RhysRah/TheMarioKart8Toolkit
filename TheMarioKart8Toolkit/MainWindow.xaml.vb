@@ -542,4 +542,43 @@ Class MainWindow
 
     End Sub
 
+    Private Sub SearchHover(sender As Object, e As MouseEventArgs) Handles SearchButton.MouseEnter
+        SearchButton.Foreground = Brushes.Blue
+        SearchButton.Effect = New BlurEffect
+    End Sub
+
+    Private Sub FavouritesHover(sender As Object, e As MouseEventArgs) Handles ShowFavsButton.MouseEnter
+        ShowFavsButton.Foreground = Brushes.Gold
+        ShowFavsButton.Effect = New BlurEffect
+    End Sub
+
+    Private Sub AddRemoveHover(sender As Object, e As MouseEventArgs) Handles AddRemoveFavsButton.MouseEnter
+        AddRemoveFavsButton.Foreground = Brushes.Green
+        AddRemoveFavsButton.Effect = New BlurEffect
+    End Sub
+
+    Private Sub ShareHover(sender As Object, e As MouseEventArgs) Handles ShareButton.MouseEnter
+        ShareButton.Foreground = Brushes.DeepPink
+    End Sub
+
+    Private Sub ShareLeave(sender As Object, e As MouseEventArgs) Handles ShareButton.MouseLeave
+        ShareButton.Foreground = Brushes.Black
+        ShareButton.Effect = Nothing
+    End Sub
+
+
+    Private Sub AddRemoveLeave(sender As Object, e As MouseEventArgs) Handles AddRemoveFavsButton.MouseLeave
+        AddRemoveFavsButton.Foreground = Brushes.Black
+        AddRemoveFavsButton.Effect = Nothing
+    End Sub
+
+    Private Sub FavouritesLeave(sender As Object, e As MouseEventArgs) Handles ShowFavsButton.MouseLeave
+        ShowFavsButton.Foreground = Brushes.Black
+        ShowFavsButton.Effect = Nothing
+    End Sub
+
+    Private Sub SearchLeave(sender As Object, e As MouseEventArgs) Handles SearchButton.MouseLeave
+        SearchButton.Foreground = Brushes.Black
+        SearchButton.Effect = Nothing
+    End Sub
 End Class
