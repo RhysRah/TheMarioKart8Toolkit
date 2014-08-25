@@ -395,10 +395,83 @@ Enjoy!
                     <TextBox x:Name="SearchMiiName_Copy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,121,0,0"/>
                     <Label Content="In-Game Nickname" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,98,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,165,0,0" SelectionChanged="ComboBox_SelectionChanged_1">
+                        <ListBoxItem Content=""/>
+                        <ListBoxItem Content="Mario Kart Stadium"/>
+                        <ListBoxItem Content="Water Park"/>
+                        <ListBoxItem Content="Sweet Sweet Canyon"/>
+                        <ListBoxItem Content="Thwomp Ruins"/>
+                        <ListBoxItem Content="Mario Circuit"/>
+                        <ListBoxItem Content="Toad Harbor"/>
+                        <ListBoxItem Content="Twisted Mansion"/>
+                        <ListBoxItem Content="Shy Guy Falls"/>
+                        <ListBoxItem Content="Sunshine Airport"/>
+                        <ListBoxItem Content="Dolphin Shoals"/>
+                        <ListBoxItem Content="Electrodrome"/>
+                        <ListBoxItem Content="Mount Wario"/>
+                        <ListBoxItem Content="Cloudtop Cruise"/>
+                        <ListBoxItem Content="Bone-Dry Dunes"/>
+                        <ListBoxItem Content="Bowser's Castle"/>
+                        <ListBoxItem Content="Rainbow Road"/>
+                        <ListBoxItem Content="Wii Moo Moo Meadows"/>
+                        <ListBoxItem Content="GBA Mario Circuit"/>
+                        <ListBoxItem Content="DS Cheep Cheep Beach"/>
+                        <ListBoxItem Content="N64 Toad's Turnpike"/>
+                        <ListBoxItem Content="GCN Dry Dry Desert"/>
+                        <ListBoxItem Content="SNES Donut Plains 3"/>
+                        <ListBoxItem Content="N64 Royal Raceway"/>
+                        <ListBoxItem Content="3DS DK Jungle"/>
+                        <ListBoxItem Content="DS Wario Stadium"/>
+                        <ListBoxItem Content="GCN Sherbet Land"/>
+                        <ListBoxItem Content="3DS Music Park"/>
+                        <ListBoxItem Content="N64 Yoshi Valley"/>
+                        <ListBoxItem Content="DS Tick-Tock Clock"/>
+                        <ListBoxItem Content="3DS Piranha Plant Slide"/>
+                        <ListBoxItem Content="Wii Grumble Volcano"/>
+                        <ListBoxItem Content="N64 Rainbow Road"/>
+
                     </ComboBox>
                         <Label Content="Character" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" Margin="10,184,0,0"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,208,0,0"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,252,0,0"/>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,208,0,0">
+                        <ListBoxItem Content=""/>
+                        <ListBoxItem Content="Baby Rosalina"/>
+                        <ListBoxItem Content="Iggy "/>
+                        <ListBoxItem Content="Larry "/>
+                        <ListBoxItem Content="Lemmy"/>
+                        <ListBoxItem Content="Ludwig"/>
+                        <ListBoxItem Content="Morton"/>
+                        <ListBoxItem Content="Pink Gold Peach"/>
+                        <ListBoxItem Content="Roy"/>
+                        <ListBoxItem Content="Wendy"/>
+                        <ListBoxItem Content="Baby Daisy"/>
+                        <ListBoxItem Content="Baby Luigi"/>
+                        <ListBoxItem Content="Baby Mario"/>
+                        <ListBoxItem Content="Baby Peach"/>
+                        <ListBoxItem Content="Bowser"/>
+                        <ListBoxItem Content="Donkey Kong"/>
+                        <ListBoxItem Content="Koopa Troopa"/>
+                        <ListBoxItem Content="Lakitu"/>
+                        <ListBoxItem Content="Luigi"/>
+                        <ListBoxItem Content="Mario"/>
+                        <ListBoxItem Content="Metal Mario"/>
+                        <ListBoxItem Content="Mii"/>
+                        <ListBoxItem Content="Princess Daisy"/>
+                        <ListBoxItem Content="Princess Peach"/>
+                        <ListBoxItem Content="Rosalina"/>
+                        <ListBoxItem Content="Shy Guy"/>
+                        <ListBoxItem Content="Toad"/>
+                        <ListBoxItem Content="Toadette"/>
+                        <ListBoxItem Content="Waluigi"/>
+                        <ListBoxItem Content="Wario"/>
+                        <ListBoxItem Content="Yoshi"/>
+                    </ComboBox>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,252,0,0">
+                        <ListBoxItem Content=""/>
+                        <ListBoxItem Content="Grand Prix"/>
+                        <ListBoxItem Content="Time Trials"/>
+                        <ListBoxItem Content="VS Race"/>
+                        <ListBoxItem Content="Battle"/>
+                        <ListBoxItem Content="Tournament"/>
+                    </ComboBox>
                     <Label Content="Track" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
                     <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" Margin="10,227,0,0" Content="Game Mode"/>
                     <Button x:Name="SearchButton" Content="&#xf002;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Height="37" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="30" Margin="10,285,0,0"/>
