@@ -380,7 +380,6 @@ Enjoy!
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">
                 <Grid>
                     <WebBrowser x:Name="MKTVYoutubeVideo" HorizontalAlignment="Left" Height="158" VerticalAlignment="Top" Width="280" Margin="644,158,0,0"/>
-                    <ListBox x:Name="MKTVSearchResults" HorizontalAlignment="Left" Height="306" Margin="154,10,0,0" VerticalAlignment="Top" Width="485"/>
                     <Image x:Name="MKTVMiiIcon" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="48" Margin="644,10,0,0"/>
                     <Label x:Name="MKTVMiiName" Content="" HorizontalAlignment="Left" Margin="697,10,0,0" VerticalAlignment="Top" Height="48" Width="227" FontFamily="Segoe UI Light" FontSize="24" VerticalContentAlignment="Center"/>
                     <Image x:Name="MKTVTrack" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="128" Margin="644,63,0,0"/>
@@ -478,6 +477,18 @@ Enjoy!
                     <Button x:Name="ShowFavsButton" Content="&#xf02e;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="64,291,0,0"/>
                     <Button x:Name="AddRemoveFavsButton" Content="&#xf055;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="94,291,0,0"/>
                     <Button x:Name="ShareButton" Content="&#xf1e0;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="124,291,0,0"/>
+                    <ListView HorizontalAlignment="Left" Height="306" VerticalAlignment="Top" Width="485" Margin="154,10,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Date"/>
+                                <GridViewColumn Header="In-Game Nickname"/>
+                                <GridViewColumn Header="Nintendo Network ID"/>
+                                <GridViewColumn Header="Track"/>
+                                <GridViewColumn Header="Character"/>
+                                <GridViewColumn Header="Game Mode"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
         </TabControl>
