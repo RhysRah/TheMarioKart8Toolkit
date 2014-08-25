@@ -389,11 +389,11 @@ Enjoy!
                     <DatePicker x:Name="UploadedAfter" HorizontalAlignment="Left" Margin="9,34,0,0" VerticalAlignment="Top" Width="67" Text="From:" FirstDayOfWeek="Monday" DisplayDate="2014-08-07" DisplayDateStart="2014-08-07" HorizontalContentAlignment="Center"/>
                     <Label Content="Uploaded between:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <DatePicker x:Name="UploadedBefore" HorizontalAlignment="Left" Margin="82,34,0,0" VerticalAlignment="Top" Width="67" Text="From:" FirstDayOfWeek="Monday" DisplayDate="2020-01-01" DisplayDateStart="2014-08-07" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="SearchMiiName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,78,0,0"/>
+                    <TextBox x:Name="SearchNNID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,78,0,0"/>
                     <Label Content="Nintendo Network ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="SearchMiiName_Copy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,121,0,0"/>
+                    <TextBox x:Name="SearchMiiName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,121,0,0"/>
                     <Label Content="In-Game Nickname" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,98,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,165,0,0" SelectionChanged="ComboBox_SelectionChanged_1">
+                    <ComboBox x:Name="TrackSearch" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,165,0,0" SelectionChanged="ComboBox_SelectionChanged_1">
                         <ListBoxItem Content=""/>
                         <ListBoxItem Content="Mario Kart Stadium"/>
                         <ListBoxItem Content="Water Park"/>
@@ -430,7 +430,7 @@ Enjoy!
 
                     </ComboBox>
                         <Label Content="Character" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" Margin="10,184,0,0"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,208,0,0">
+                    <ComboBox x:Name="CharacterSearch" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,208,0,0">
                         <ListBoxItem Content=""/>
                         <ListBoxItem Content="Baby Rosalina"/>
                         <ListBoxItem Content="Iggy "/>
@@ -463,7 +463,7 @@ Enjoy!
                         <ListBoxItem Content="Wario"/>
                         <ListBoxItem Content="Yoshi"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,252,0,0">
+                    <ComboBox x:Name="GameModeSearch" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,252,0,0">
                         <ListBoxItem Content=""/>
                         <ListBoxItem Content="Grand Prix"/>
                         <ListBoxItem Content="Time Trials"/>

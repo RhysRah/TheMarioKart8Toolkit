@@ -4,6 +4,7 @@ Imports System.Windows.Media.Effects
 Imports Newtonsoft.Json.Linq
 Imports Newtonsoft.Json
 Imports System.IO
+Imports MktvdbQuery
 
 Class MainWindow
 
@@ -559,6 +560,7 @@ Class MainWindow
 
     Private Sub ShareHover(sender As Object, e As MouseEventArgs) Handles ShareButton.MouseEnter
         ShareButton.Foreground = Brushes.DeepPink
+        ShareButton.Effect = New BlurEffect
     End Sub
 
     Private Sub ShareLeave(sender As Object, e As MouseEventArgs) Handles ShareButton.MouseLeave
@@ -581,4 +583,66 @@ Class MainWindow
         SearchButton.Foreground = Brushes.Black
         SearchButton.Effect = Nothing
     End Sub
+
+    Private Sub SearchMKTVDB()
+        Dim Search As New MktvDatabaseSearch(UploadedAfter.DisplayDate, UploadedBefore.DisplayDate, DirectCast(GameModeSearch.SelectedItem, ListBoxItem).Content, DirectCast(TrackSearch.SelectedItem, ListBoxItem).Content, DirectCast(CharacterSearch.SelectedItem, ListBoxItem).Content, SearchMiiName.Text, SearchNNID.Text)
+
+    End Sub
+End Class
+
+Public Class VideoListItem
+    Private m_Name As String
+    Private m_NNID As String
+    Private m_Date As String
+    Private m_Char As String
+    Private m_Track As String
+    Private m_Mode As String
+    Public Property Name() As String
+        Get
+            Return m_Name
+        End Get
+        Set(value As String)
+            m_Name = Value
+        End Set
+    End Property
+    Public Property NNID() As String
+        Get
+            Return m_NNID
+        End Get
+        Set(value As String)
+            m_NNID = value
+        End Set
+    End Property
+    Public Property UploadDate() As String
+        Get
+            Return m_Date
+        End Get
+        Set(value As String)
+            m_Date = value
+        End Set
+    End Property
+    Public Property Character() As String
+        Get
+            Return m_Char
+        End Get
+        Set(value As String)
+            m_Char = value
+        End Set
+    End Property
+    Public Property Track() As String
+        Get
+            Return m_Track
+        End Get
+        Set(value As String)
+            m_Track = value
+        End Set
+    End Property
+    Public Property Mode() As String
+        Get
+            Return m_Mode
+        End Get
+        Set(value As String)
+            m_Mode = value
+        End Set
+    End Property
 End Class
