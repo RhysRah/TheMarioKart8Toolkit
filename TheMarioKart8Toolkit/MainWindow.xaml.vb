@@ -2,6 +2,7 @@
 Imports System.Windows.Media.Animation
 Imports System.Windows.Media.Effects
 Imports Newtonsoft.Json.Linq
+Imports Newtonsoft.Json
 Imports System.IO
 
 Class MainWindow
@@ -240,6 +241,18 @@ Class MainWindow
             HandlingWaterTotal.Value = Val(CharHandlingWater.Content) + Val(BodyHandlingWater.Content) + Val(WheelHandlingWater.Content) + Val(GliderHandlingWater.Content)
             HandlingAntiGravTotal.Value = Val(CharHandlingAntigrav.Content) + Val(BodyHandlingAntigrav.Content) + Val(WheelHandlingAntigrav.Content) + Val(GliderHandlingAntigrav.Content)
 
+            SpeedGroundString.Content = SpeedGroundTotal.Value.ToString
+            SpeedWaterString.Content = SpeedWaterTotal.Value.ToString
+            SpeedAirString.Content = SpeedAirTotal.Value.ToString
+            SpeedAntGravString.Content = SpeedAntiGravTotal.Value.ToString
+            AccelString.Content = AccelTotal.Value.ToString
+            WeightString.Content = WeightTotal.Value.ToString
+            HandlingGroundString.Content = HandlingGroundTotal.Value.ToString
+            HandlingWaterString.Content = HandlingWaterTotal.Value.ToString
+            HandlingAirString.Content = HandlingAirTotal.Value.ToString
+            HandlingAntiGravString.Content = HandlingAntiGravTotal.Value.ToString
+            TractionString.Content = TractionTotal.Value.ToString
+            MiniTurboString.Content = MiniTurboTotal.Value.ToString
         Catch ex As Exception
 
         End Try
@@ -478,8 +491,10 @@ Class MainWindow
                 PossibleTracks(3) = 40
                 Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Rainbow_Road.png"))
                 PossibleTracks(4) = 47
-
         End Select
+    End Sub
+
+    Private Sub LoadRanks(ByVal ID As Integer)
 
     End Sub
 
