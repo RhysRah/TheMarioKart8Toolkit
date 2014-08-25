@@ -401,10 +401,10 @@ Enjoy!
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,252,0,0"/>
                     <Label Content="Track" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
                     <Label HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" Margin="10,227,0,0" Content="Game Mode"/>
-                    <Button x:Name="SearchButton" Content="&#xF0C9;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Height="37" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="30" Margin="10,279,0,0"/>
-                    <Button x:Name="ShowFavsButton" Content="&#xF0C9;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="64,291,0,0"/>
-                    <Button x:Name="AddRemoveFavsButton" Content="&#xF0C9;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="94,291,0,0"/>
-                    <Button x:Name="ShareButton" Content="&#xF0C9;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="124,291,0,0"/>
+                    <Button x:Name="SearchButton" Content="&#xf002;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Height="37" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="30" Margin="10,285,0,0"/>
+                    <Button x:Name="ShowFavsButton" Content="&#xf02e;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="64,291,0,0"/>
+                    <Button x:Name="AddRemoveFavsButton" Content="&#xf055;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="94,291,0,0"/>
+                    <Button x:Name="ShareButton" Content="&#xf1e0;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="124,291,0,0"/>
                 </Grid>
             </TabItem>
         </TabControl>
