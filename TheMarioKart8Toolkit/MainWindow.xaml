@@ -369,12 +369,12 @@ Enjoy!
                     <Label x:Name="Rank5Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,216,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
                     <Label x:Name="Rank6Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,270,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
                     <Label x:Name="Rank6Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,270,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
-                    <Image x:Name="Rank6Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,269,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank5Flag" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="488,217,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank4Flag" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="488,165,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank3Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,114,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank2Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,63,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank1Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,12,0,0" MouseUp="CupSelect" Grid.Column="1"/> 
+                    <Image x:Name="Rank6Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,269,0,0" Grid.Column="1"/>
+                    <Image x:Name="Rank5Flag" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="488,217,0,0"  Grid.Column="1"/>
+                    <Image x:Name="Rank4Flag" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="488,165,0,0"  Grid.Column="1"/>
+                    <Image x:Name="Rank3Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,114,0,0"  Grid.Column="1"/>
+                    <Image x:Name="Rank2Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,63,0,0"  Grid.Column="1"/>
+                    <Image x:Name="Rank1Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,12,0,0"  Grid.Column="1"/> 
                 </Grid>
             </TabItem>
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">
