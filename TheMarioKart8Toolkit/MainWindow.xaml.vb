@@ -3,6 +3,7 @@ Imports System.Windows.Media.Animation
 Imports System.Windows.Media.Effects
 Imports Newtonsoft.Json.Linq
 Imports System.IO
+
 Class MainWindow
 
     Dim Timer As DispatcherTimer
@@ -10,9 +11,15 @@ Class MainWindow
     Dim IsPanelOpen As Boolean
     Dim VehicleParts As JObject
     Dim PossibleTracks As Integer()
+    Dim TTViewerMiiverseLinks As String()
+
+    Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
+
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
-        PossibleTracks = {0, 0, 0, 0, 0}
+
+        InitTTViewer()
+
         Timer = New DispatcherTimer
         AddHandler Timer.Tick, AddressOf TimerTick
         Timer.Interval = New TimeSpan(0, 0, 0, 0, 10)
@@ -20,12 +27,36 @@ Class MainWindow
         Opacity = 0
 
         PanelOpen = New DoubleAnimation(940, 1140, New Duration(New TimeSpan(0, 0, 0, 0, 500)))
-        PanelOpen.EasingFunction = New SineEase
+        PanelOpen.EasingFunction = New CircleEase
 
         PanelClose = New DoubleAnimation(1140, 940, New Duration(New TimeSpan(0, 0, 0, 0, 500)))
-        PanelClose.EasingFunction = New SineEase
+        PanelClose.EasingFunction = New CircleEase
 
         VehicleParts = JObject.Parse(File.ReadAllText("partlist.json"))
+        TTViewerMiiverseLinks = {"", "", "", "", "", ""}
+
+    End Sub
+
+    Private Sub InitTTViewer()
+
+        PossibleTracks = {0, 0, 0, 0, 0}
+
+        MushroomCupPicture.Effect = New DropShadowEffect()
+
+        Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mario_Kart_Stadium.png"))
+        PossibleTracks(1) = 27
+        Track2Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Water_Park.png"))
+        PossibleTracks(2) = 28
+        Track3Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Sweet_Sweet_Canyon.png"))
+        PossibleTracks(3) = 19
+        Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Thwomp_Ruins.png"))
+        PossibleTracks(4) = 17
+
+        Dim effect As New DropShadowEffect()
+        effect.ShadowDepth = 10
+        Track1Image.Effect = effect
+        DoTTRankings(PossibleTracks(1))
+
     End Sub
 
     Private Sub TimerTick()
@@ -272,8 +303,101 @@ Class MainWindow
 
     End Sub
 
+    Private Sub DoTTRankings(id As Integer)
+        Dim d As New TTRankingDelegate(AddressOf DisplayTTRankings)
+        Me.Dispatcher.BeginInvoke(d, {id})
+    End Sub
+
+    'Do not use this directly, use DoTTRankings instead
+    Private Sub DisplayTTRankings(id As Integer)
+        Dim TrackResults As New TimeTrialDownloader(id)
+
+        Dim bDecoder As BitmapDecoder = BitmapDecoder.Create(New Uri(TrackResults.Scores(0).iconUrl), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None)
+
+        If bDecoder IsNot Nothing AndAlso bDecoder.Frames.Count > 0 Then
+            Rank1Mii.Source = bDecoder.Frames(0)
+        End If
+
+        bDecoder = BitmapDecoder.Create(New Uri(TrackResults.Scores(1).iconUrl), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None)
+
+        If bDecoder IsNot Nothing AndAlso bDecoder.Frames.Count > 0 Then
+            Rank2Mii.Source = bDecoder.Frames(0)
+        End If
+
+        bDecoder = BitmapDecoder.Create(New Uri(TrackResults.Scores(2).iconUrl), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None)
+
+        If bDecoder IsNot Nothing AndAlso bDecoder.Frames.Count > 0 Then
+            Rank3Mii.Source = bDecoder.Frames(0)
+        End If
+
+        bDecoder = BitmapDecoder.Create(New Uri(TrackResults.Scores(3).iconUrl), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None)
+
+        If bDecoder IsNot Nothing AndAlso bDecoder.Frames.Count > 0 Then
+            Rank4Mii.Source = bDecoder.Frames(0)
+        End If
+
+        bDecoder = BitmapDecoder.Create(New Uri(TrackResults.Scores(4).iconUrl), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None)
+
+        If bDecoder IsNot Nothing AndAlso bDecoder.Frames.Count > 0 Then
+            Rank5Mii.Source = bDecoder.Frames(0)
+        End If
+
+        bDecoder = BitmapDecoder.Create(New Uri(TrackResults.Scores(5).iconUrl), BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.None)
+
+        If bDecoder IsNot Nothing AndAlso bDecoder.Frames.Count > 0 Then
+            Rank6Mii.Source = bDecoder.Frames(0)
+        End If
+
+
+        Rank1Name.Content = TrackResults.Scores(0).playerName
+        Rank2Name.Content = TrackResults.Scores(1).playerName
+        Rank3Name.Content = TrackResults.Scores(2).playerName
+        Rank4Name.Content = TrackResults.Scores(3).playerName
+        Rank5Name.Content = TrackResults.Scores(4).playerName
+        Rank6Name.Content = TrackResults.Scores(5).playerName
+
+        Rank1Time.Content = TrackResults.Scores(0).time
+        Rank2Time.Content = TrackResults.Scores(1).time
+        Rank3Time.Content = TrackResults.Scores(2).time
+        Rank4Time.Content = TrackResults.Scores(3).time
+        Rank5Time.Content = TrackResults.Scores(4).time
+        Rank6Time.Content = TrackResults.Scores(5).time
+
+        Rank1Flag.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Country Flags/" & TrackResults.Scores(0).countryCode.ToLower & ".png"))
+        Rank2Flag.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Country Flags/" & TrackResults.Scores(1).countryCode.ToLower & ".png"))
+        Rank3Flag.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Country Flags/" & TrackResults.Scores(2).countryCode.ToLower & ".png"))
+        Rank4Flag.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Country Flags/" & TrackResults.Scores(3).countryCode.ToLower & ".png"))
+        Rank5Flag.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Country Flags/" & TrackResults.Scores(4).countryCode.ToLower & ".png"))
+        Rank6Flag.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Country Flags/" & TrackResults.Scores(5).countryCode.ToLower & ".png"))
+
+        For i As Integer = 0 To 5
+            TTViewerMiiverseLinks(i) = "https://miiverse.nintendo.net/users/" & TrackResults.Scores(i).playerNNID
+        Next
+    End Sub
+
+
     Private Sub CupSelect(sender As Object, e As MouseButtonEventArgs)
         Dim TheImage As Image = DirectCast(sender, Image)
+
+        MushroomCupPicture.Effect = Nothing
+        FlowerCupPicture.Effect = Nothing
+        StarCupPicture.Effect = Nothing
+        SpecialCupPicture.Effect = Nothing
+        ShellCupPicture.Effect = Nothing
+        BananaCupPicture.Effect = Nothing
+        LightningCupPicture.Effect = Nothing
+        LeafCupPicture.Effect = Nothing
+
+
+        Track1Image.Effect = Nothing
+        Track2Image.Effect = Nothing
+        Track3Image.Effect = Nothing
+        Track4Image.Effect = Nothing
+
+        Dim effect As New DropShadowEffect()
+        effect.ShadowDepth = 10
+        DirectCast(sender, Image).Effect = effect
+
         Select Case TheImage.Name
             Case "MushroomCupPicture"
                 Track1Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mario_Kart_Stadium.png"))
@@ -355,6 +479,46 @@ Class MainWindow
                 Track4Image.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Rainbow_Road.png"))
                 PossibleTracks(4) = 47
 
+        End Select
+
+    End Sub
+
+    Private Sub GoToMiiverse(sender As Object, e As MouseButtonEventArgs)
+        Select Case DirectCast(sender, Image).Name
+            Case "Rank1Mii"
+                System.Diagnostics.Process.Start(TTViewerMiiverseLinks(0))
+            Case "Rank2Mii"
+                System.Diagnostics.Process.Start(TTViewerMiiverseLinks(1))
+            Case "Rank3Mii"
+                System.Diagnostics.Process.Start(TTViewerMiiverseLinks(2))
+            Case "Rank4Mii"
+                System.Diagnostics.Process.Start(TTViewerMiiverseLinks(3))
+            Case "Rank5Mii"
+                System.Diagnostics.Process.Start(TTViewerMiiverseLinks(4))
+            Case "Rank6Mii"
+                System.Diagnostics.Process.Start(TTViewerMiiverseLinks(5))
+        End Select
+    End Sub
+
+    Private Sub SelectTrack(sender As Object, e As MouseButtonEventArgs) Handles Track4Image.MouseUp
+
+        Track1Image.Effect = Nothing
+        Track2Image.Effect = Nothing
+        Track3Image.Effect = Nothing
+        Track4Image.Effect = Nothing
+
+        Dim effect As New DropShadowEffect()
+        effect.ShadowDepth = 10
+        DirectCast(sender, Image).Effect = effect
+        Select Case DirectCast(sender, Image).Name
+            Case "Track1Image"
+                DoTTRankings(PossibleTracks(1))
+            Case "Track2Image"
+                DoTTRankings(PossibleTracks(2))
+            Case "Track3Image"
+                DoTTRankings(PossibleTracks(3))
+            Case "Track4Image"
+                DoTTRankings(PossibleTracks(4))
         End Select
 
     End Sub

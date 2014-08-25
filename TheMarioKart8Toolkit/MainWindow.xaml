@@ -44,7 +44,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="Images/BG.png"/>
         </Grid.Background>
-        <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="940" Height="35" Background="#00000000" MouseDown="DragWindow"></Label>
+        <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="940" Height="35" Background="#00000000" MouseDown="DragWindow" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="CloseWindow" Content="&#xf00d;" HorizontalAlignment="Left" Margin="905,5,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
         <Button x:Name="MinimiseWindow" Content="&#xf068;" HorizontalAlignment="Left" Margin="875,6,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
         <Image HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="940
@@ -321,30 +321,30 @@ Enjoy!
                     <Label x:Name="Diff" Content="" HorizontalAlignment="Left" Margin="408,198,0,0" VerticalAlignment="Top" Height="79" Width="97" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer">
+            <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer" Visibility="Collapsed">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="152*"/>
                         <ColumnDefinition Width="315*"/>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="MushroomCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,8,0,0" Source="Images/MK8ATTV/Mushroom_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="FlowerCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,86,0,0" Source="Images/MK8ATTV/120px-Flower_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="StarCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,164,0,0" Source="Images/MK8ATTV/120px-Star_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="SpecialCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,243,0,0" Source="Images/MK8ATTV/120px-Special_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="ShellCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="84,8,0,0" Source="Images/MK8ATTV/120px-Shell_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="BananaCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="84,86,0,0" Source="Images/MK8ATTV/120px-Banana_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="LeafCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="84,164,0,0" Source="Images/MK8ATTV/120px-Leaf_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="LightningCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="84,243,0,0" Source="Images/MK8ATTV/120px-Lightning_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect"/>
-                    <Image x:Name="Track1Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,8,0,0"/>
-                    <Image x:Name="Track2Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,86,0,0"/>
-                    <Image x:Name="Track3Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,164,0,0"/>
+                    <Image x:Name="MushroomCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,8,0,0" Source="Images/MK8ATTV/Mushroom_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="FlowerCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="8,86,0,0" Source="Images/MK8ATTV/120px-Flower_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="StarCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,164,0,0" Source="Images/MK8ATTV/120px-Star_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="SpecialCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="8,243,0,0" Source="Images/MK8ATTV/120px-Special_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="ShellCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="84,8,0,0" Source="Images/MK8ATTV/120px-Shell_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="BananaCupPicture" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="67" Margin="84,86,0,0" Source="Images/MK8ATTV/120px-Banana_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="LeafCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="84,164,0,0" Source="Images/MK8ATTV/120px-Leaf_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="LightningCupPicture" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="67" Margin="84,243,0,0" Source="Images/MK8ATTV/120px-Lightning_Cup_Logo_-_Mario_Kart_8.png" MouseUp="CupSelect" Cursor="Hand"/>
+                    <Image x:Name="Track1Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,8,0,0" MouseUp="SelectTrack"/>
+                    <Image x:Name="Track2Image" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="104" Margin="185,86,0,0" MouseUp="SelectTrack"/>
+                    <Image x:Name="Track3Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,164,0,0" MouseUp="SelectTrack"/>
                     <Image x:Name="Track4Image" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="104" Margin="185,243,0,0"/>
-                    <Image x:Name="Rank1Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,269,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank2Mii" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="65,217,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank3Mii" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="65,165,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank4Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,114,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank5Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,63,0,0" MouseUp="CupSelect" Grid.Column="1"/>
-                    <Image x:Name="Rank6Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,12,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank6Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,269,0,0" MouseUp="GoToMiiverse" Grid.Column="1" Cursor="Hand"/>
+                    <Image x:Name="Rank5Mii" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="65,217,0,0" MouseUp="GoToMiiverse" Grid.Column="1" Cursor="Hand"/>
+                    <Image x:Name="Rank4Mii" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="65,165,0,0" MouseUp="GoToMiiverse" Grid.Column="1" Cursor="Hand"/>
+                    <Image x:Name="Rank3Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,114,0,0" MouseUp="GoToMiiverse" Grid.Column="1" Cursor="Hand"/>
+                    <Image x:Name="Rank2Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,63,0,0" MouseUp="GoToMiiverse" Grid.Column="1" Cursor="Hand"/>
+                    <Image x:Name="Rank1Mii" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="65,12,0,0" MouseUp="GoToMiiverse" Grid.Column="1" Cursor="Hand"/>
                     <Label x:Name="Rank1Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,12,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
                     <Label x:Name="Rank1Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,12,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
                     <Label x:Name="Rank2Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,63,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
@@ -357,6 +357,12 @@ Enjoy!
                     <Label x:Name="Rank5Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,216,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
                     <Label x:Name="Rank6Name" Content="Mii" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="125,270,0,0" Height="46" VerticalContentAlignment="Center" Width="211" FontSize="30" FontFamily="Segoe UI Light"/>
                     <Label x:Name="Rank6Time" Content="Time" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="341,270,0,0" Height="46" VerticalContentAlignment="Center" Width="142" FontSize="30" FontFamily="Segoe UI Light"/>
+                    <Image x:Name="Rank6Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,269,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank5Flag" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="488,217,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank4Flag" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="48" Margin="488,165,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank3Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,114,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank2Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,63,0,0" MouseUp="CupSelect" Grid.Column="1"/>
+                    <Image x:Name="Rank1Flag" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="48" Margin="488,12,0,0" MouseUp="CupSelect" Grid.Column="1"/> 
                 </Grid>
             </TabItem>
             <TabItem x:Name="MKTV_Database" Header="MKTV" Visibility="Visible">
