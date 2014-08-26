@@ -15,6 +15,8 @@ Class MainWindow
     Dim PossibleTracks As Integer()
     Dim TTViewerMiiverseLinks As String()
     Dim MktvVideos As VideoObject()
+    Dim favourites As List(Of VideoObject)
+    Dim AreFavShown As Boolean
 
     Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
 
@@ -34,7 +36,7 @@ Class MainWindow
 
         VehicleParts = JObject.Parse(File.ReadAllText("partlist.json"))
         TTViewerMiiverseLinks = {"", "", "", "", "", ""}
-
+        favourites = New List(Of VideoObject)
 
 
     End Sub
@@ -546,7 +548,12 @@ Class MainWindow
     End Sub
 
     Private Sub AddRemoveHover(sender As Object, e As MouseEventArgs) Handles AddRemoveFavsButton.MouseEnter
-        AddRemoveFavsButton.Foreground = Brushes.Green
+        If AreFavShown Then
+            AddRemoveFavsButton.Foreground = Brushes.Red
+        Else
+            AddRemoveFavsButton.Foreground = Brushes.Green
+
+        End If
         AddRemoveFavsButton.Effect = New BlurEffect
     End Sub
 
@@ -593,10 +600,14 @@ Class MainWindow
             item.Character = currentVid.character
             SearchResults.Items.Add(item)
         Next
+
+        AreFavShown = False
     End Sub
 
     Private Sub Search(sender As Object, e As RoutedEventArgs) Handles SearchButton.Click
         SearchMKTVDB()
+
+        AddRemoveFavsButton.Content = ChrW(&HF055)
     End Sub
 
     Private Sub SearchResults_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles SearchResults.SelectionChanged
@@ -611,6 +622,62 @@ Class MainWindow
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub ShowFavsButton_Click(sender As Object, e As RoutedEventArgs) Handles ShowFavsButton.Click
+        Dim json As String
+
+        Try
+            json = System.IO.File.ReadAllText("favourites.json")
+            favourites = JsonConvert.DeserializeObject(Of List(Of VideoObject))(json)
+
+            SearchResults.Items.Clear()
+            For Each video As VideoObject In favourites
+                Dim item As VideoListItem = New VideoListItem
+                item.Name = video.miiName
+                item.Character = video.character
+                item.NNID = video.nnid
+                item.Track = video.track
+                item.Mode = video.gameMode
+                item.UploadDate = video.uploadTime.ToString
+                SearchResults.Items.Add(item)
+            Next
+            AreFavShown = True
+            ShowFavsButton.Visibility = False
+            MktvVideos = favourites.ToArray()
+
+            AddRemoveFavsButton.Content = ChrW(&HF056)
+
+
+        Catch ex As Exception
+            MsgBox("No favourites have been found")
+        End Try
+
+    End Sub
+
+    Private Sub AddRemoveFavsButton_Click(sender As Object, e As RoutedEventArgs) Handles AddRemoveFavsButton.Click
+        If Not AreFavShown Then
+
+            Dim i As Integer = SearchResults.SelectedIndex
+            favourites.Add(MktvVideos(i))
+            SaveFavourites()
+
+        Else
+            Try
+                Dim i As Integer = SearchResults.SelectedIndex
+                favourites.Remove(favourites(i))
+                SaveFavourites()
+                ShowFavsButton_Click(Nothing, Nothing)
+            Catch ex As Exception
+
+            End Try
+
+        End If
+    End Sub
+
+    Private Sub SaveFavourites()
+        Dim json As String = JsonConvert.SerializeObject(favourites)
+        System.IO.File.WriteAllText("favourites.json", json)
     End Sub
 
 End Class
