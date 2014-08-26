@@ -15,6 +15,9 @@ Class MainWindow
     Dim PossibleTracks As Integer()
     Dim TTViewerMiiverseLinks As String()
     Dim MktvVideos As VideoObject()
+    Dim MKTVMiiverseLink As String
+    Dim MKTVMiiverseProfile As String
+    Dim SelectedVideo As VideoObject
 
     Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
 
@@ -487,9 +490,6 @@ Class MainWindow
         End Select
     End Sub
 
-    Private Sub LoadRanks(ByVal ID As Integer)
-
-    End Sub
 
     Private Sub GoToMiiverse(sender As Object, e As MouseButtonEventArgs)
         Select Case DirectCast(sender, Image).Name
@@ -599,20 +599,146 @@ Class MainWindow
         SearchMKTVDB()
     End Sub
 
-    Private Sub SearchResults_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles SearchResults.SelectionChanged
+    Private Sub LoadReplay(sender As Object, e As SelectionChangedEventArgs) Handles SearchResults.SelectionChanged
 
         Try
             Dim currentVid As VideoObject = MktvVideos(SearchResults.SelectedIndex)
+            SelectedVideo = currentVid
             MKTVMiiIcon.Source = New BitmapImage(New Uri(currentVid.miiIconUrl))
             MKTVMiiName.Content = currentVid.miiName
             MKTVGameMode.Content = currentVid.gameMode
             MKTVYoutubeVideo.Source = New Uri("https://www.youtube.com/embed/" & currentVid.youtubeId & "?fs=1&autohide=1&autoplay=1&theme=light&vq=hd720")
             MKTVCharacterIcon.Source = New BitmapImage(New Uri("http://winepicgaming.de/mkapp/Images/" & currentVid.character & ".png"))
+            MKTVMiiverseLink = currentVid.miiverseUrl
+
+            If MKTVMiiverseLink Is "None" Then
+                MiiversePost.Visibility = Windows.Visibility.Hidden
+            Else
+                MiiversePost.Visibility = Windows.Visibility.Visible
+            End If
+
+            MKTVMiiverseProfile = "https://miiverse.nintendo.net/users/" & currentVid.nnid
+
+            Select Case currentVid.track
+                Case "Mario Kart Stadium"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mario_Kart_Stadium.png"))
+
+                Case "Water Park"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Water_Park.png"))
+
+                Case "Sweet Sweet Canyon"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Sweet_Sweet_Canyon.png"))
+
+                Case "Thwomp Ruins"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Thwomp_Ruins.png"))
+
+                Case "Mario Circuit"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mario_Circuit.png"))
+
+                Case "Toad Harbor"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Toad_Harbor.png"))
+
+                Case "Twisted Mansion"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Twisted_Mansion.png"))
+
+                Case "Shy Guy Falls"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Shy_Guy_Falls.png"))
+
+                Case "Sunshine Airport"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Sunshine_Airport.png"))
+
+                Case "Dolphin Shoals"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Dolphin_Shoals.png"))
+
+                Case "Electrodrome"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Electrodrome.png"))
+
+                Case "Mount Wario"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Mount_Wario.png"))
+
+                Case "Cloudtop Cruise"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Cloudtop_Cruise.png"))
+
+                Case "Bone-Dry Dunes"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Bone-Dry_Dunes.png"))
+
+                Case "Bowser's Castle"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Bowser's_Castle.png"))
+
+                Case "Rainbow Road"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Rainbow_Road.png"))
+
+                Case "Wii Moo Moo Meadows"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Wii_Moo_Moo_Meadows.png"))
+
+                Case "GBA Mario Circuit"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_GBA_Mario_Circuit.png"))
+
+                Case "DS Cheep Cheep Beach"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_DS_Cheep_Cheep_Beach.png"))
+
+                Case "N64 Toad's Turnpike"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Toad's_Turnpike.png"))
+
+                Case "GCN Dry Dry Desert"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_GCN_Dry_Dry_Desert.png"))
+
+                Case "SNES Donut Plains 3"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_SNES_Donut_Plains_3.png"))
+
+                Case "N64 Royal Raceway"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Royal_Raceway.png"))
+
+                Case "3DS DK Jungle"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_3DS_DK_Jungle.png"))
+
+                Case "DS Wario Stadium"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_DS_Wario_Stadium.png"))
+
+                Case "GCN Sherbet Land"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_GCN_Sherbet_Land.png"))
+
+                Case "3DS Music Park"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_3DS_Music_Park.png"))
+
+                Case "N64 Yoshi Valley"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Yoshi_Valley.png"))
+
+                Case "DS Tick-Tock Clock"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_DS_Tick-Tock_Clock.png"))
+
+                Case "3DS Piranha Plant Slide"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_3DS_Piranha_Plant_Slide.png"))
+
+                Case "Wii Grumble Volcano"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_Wii_Grumble_Volcano.png"))
+
+                Case "N64 Rainbow Road"
+                    MKTVTrack.Source = New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/MK8ATTV/Tracks/MK8-_N64_Rainbow_Road.png"))
+
+            End Select
+
+            ShareButton.IsEnabled = True
         Catch ex As Exception
 
         End Try
+
+
     End Sub
 
+    Private Sub MKTVMiiverseProfileNavigate(sender As Object, e As MouseButtonEventArgs) Handles MKTVMiiIcon.MouseUp
+        Process.Start(MKTVMiiverseProfile)
+    End Sub
+
+    Private Sub MKTVMiiversePostNavigate(sender As Object, e As MouseButtonEventArgs) Handles MiiversePost.MouseUp
+        Process.Start(MKTVMiiverseLink)
+    End Sub
+
+    Private Sub ShareButton_Click(sender As Object, e As RoutedEventArgs) Handles ShareButton.Click
+        Dim ShareWindow As New Window1
+        ShareWindow.SelectedVideo = SelectedVideo
+        ShareWindow.ShowDialog()
+    End Sub
 End Class
 
 Public Class VideoListItem
