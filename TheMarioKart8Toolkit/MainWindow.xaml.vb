@@ -14,19 +14,17 @@ Class MainWindow
     Dim VehicleParts As JObject
     Dim PossibleTracks As Integer()
     Dim TTViewerMiiverseLinks As String()
+    Dim MktvVideos As VideoObject()
 
     Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
 
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
-        InitTTViewer()
-
-        Timer = New DispatcherTimer
-        AddHandler Timer.Tick, AddressOf TimerTick
-        Timer.Interval = New TimeSpan(0, 0, 0, 0, 10)
-        Timer.Start()
-        Opacity = 0
+        Dim AppOpen As New DoubleAnimation(0, 520, New Duration(New TimeSpan(0, 0, 0, 1)))
+        AppOpen.EasingFunction = New SineEase()
+        AddHandler AppOpen.Completed, AddressOf InitTTViewer
+        BeginAnimation(HeightProperty, AppOpen)
 
         PanelOpen = New DoubleAnimation(940, 1140, New Duration(New TimeSpan(0, 0, 0, 0, 500)))
         PanelOpen.EasingFunction = New CircleEase
@@ -36,6 +34,8 @@ Class MainWindow
 
         VehicleParts = JObject.Parse(File.ReadAllText("partlist.json"))
         TTViewerMiiverseLinks = {"", "", "", "", "", ""}
+
+
 
     End Sub
 
@@ -59,14 +59,6 @@ Class MainWindow
         Track1Image.Effect = effect
         DoTTRankings(PossibleTracks(1))
 
-    End Sub
-
-    Private Sub TimerTick()
-        Opacity += 0.03
-        If Opacity > 1 Then
-            Opacity = 1
-            Timer.Stop()
-        End If
     End Sub
 
     Private Sub MinimiseHighlight(sender As Object, e As MouseEventArgs) Handles MinimiseWindow.MouseEnter
@@ -587,7 +579,40 @@ Class MainWindow
     Private Sub SearchMKTVDB()
         Dim Search As New MktvDatabaseSearch(UploadedAfter.DisplayDate, UploadedBefore.DisplayDate, DirectCast(GameModeSearch.SelectedItem, ListBoxItem).Content, DirectCast(TrackSearch.SelectedItem, ListBoxItem).Content, DirectCast(CharacterSearch.SelectedItem, ListBoxItem).Content, SearchMiiName.Text, SearchNNID.Text)
 
+        SearchResults.Items.Clear()
+
+        MktvVideos = Search.Videos.ToArray
+
+        For Each currentVid As VideoObject In Search.Videos
+            Dim item As New VideoListItem()
+            item.UploadDate = currentVid.uploadTime.ToString()
+            item.Mode = currentVid.gameMode
+            item.NNID = currentVid.nnid
+            item.Name = currentVid.miiName
+            item.Track = currentVid.track
+            item.Character = currentVid.character
+            SearchResults.Items.Add(item)
+        Next
     End Sub
+
+    Private Sub Search(sender As Object, e As RoutedEventArgs) Handles SearchButton.Click
+        SearchMKTVDB()
+    End Sub
+
+    Private Sub SearchResults_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles SearchResults.SelectionChanged
+
+        Try
+            Dim currentVid As VideoObject = MktvVideos(SearchResults.SelectedIndex)
+            MKTVMiiIcon.Source = New BitmapImage(New Uri(currentVid.miiIconUrl))
+            MKTVMiiName.Content = currentVid.miiName
+            MKTVGameMode.Content = currentVid.gameMode
+            MKTVYoutubeVideo.Source = New Uri("https://www.youtube.com/embed/" & currentVid.youtubeId & "?fs=1&autohide=1&autoplay=1&theme=light&vq=hd720")
+            MKTVCharacterIcon.Source = New BitmapImage(New Uri("http://winepicgaming.de/mkapp/Images/" & currentVid.character & ".png"))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class
 
 Public Class VideoListItem
