@@ -16,26 +16,46 @@ Class MainWindow
     Dim TTViewerMiiverseLinks As String()
     Dim MktvVideos As VideoObject()
 
+    Const CURRENT_VERSION As Integer = 1
+
     Dim MKTVMiiverseLink As String
     Dim MKTVMiiverseProfile As String
     Dim SelectedVideo As VideoObject
 
     Dim favourites As List(Of VideoObject)
     Dim AreFavShown As Boolean
+    Dim DontCheckUpdate As Boolean
 
     Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
 
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
+
         Dim args As String() = Environment.GetCommandLineArgs
         Try
             If args.Length > 1 Then
                 Dim data As String() = args(1).Split(":")
                 MKTVDBExternalCall(data(1), data(2))
+                DontCheckUpdate = True
             End If
         Catch ex As Exception
         End Try
+
+        If Not DontCheckUpdate Then
+
+            Try
+                Dim UpdateChecker As New Net.WebClient()
+                If Val(UpdateChecker.DownloadString("http://winepicgaming.de/mkapp/version2.txt")) - CURRENT_VERSION = 1 Then
+
+                    UpdateChecker.DownloadFile("http://winepicgaming.de/mkapp/latest.patch", My.Application.Info.DirectoryPath & "\\update.patch")
+
+                End If
+
+            Catch ex As Exception
+
+            End Try
+        End If
 
         Dim AppOpen As New DoubleAnimation(0, 520, New Duration(New TimeSpan(0, 0, 0, 1)))
         AppOpen.EasingFunction = New SineEase()
