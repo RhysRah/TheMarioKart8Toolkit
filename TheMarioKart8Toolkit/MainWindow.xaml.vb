@@ -16,7 +16,7 @@ Class MainWindow
     Dim TTViewerMiiverseLinks As String()
     Dim MktvVideos As VideoObject()
 
-    Const CURRENT_VERSION As Integer = 1
+    Const CURRENT_VERSION As Integer = 2
 
     Dim MKTVMiiverseLink As String
     Dim MKTVMiiverseProfile As String
@@ -30,7 +30,8 @@ Class MainWindow
 
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
-
+        Dim AppVer As String = "1000.27082014"
+        AppVersion.Content = "Build " & AppVer
 
         Dim args As String() = Environment.GetCommandLineArgs
         Try
@@ -46,10 +47,9 @@ Class MainWindow
 
             Try
                 Dim UpdateChecker As New Net.WebClient()
-                If Val(UpdateChecker.DownloadString("http://winepicgaming.de/mkapp/version2.txt")) - CURRENT_VERSION = 1 Then
-
-                    UpdateChecker.DownloadFile("http://winepicgaming.de/mkapp/latest.patch", My.Application.Info.DirectoryPath & "\\update.patch")
-
+                If Not Val(UpdateChecker.DownloadString("http://winepicgaming.de/mkapp/version2.txt")) - CURRENT_VERSION = 0 Then
+                    Process.Start("updater.exe")
+                    End
                 End If
 
             Catch ex As Exception
