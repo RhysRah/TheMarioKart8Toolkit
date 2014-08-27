@@ -28,6 +28,15 @@ Class MainWindow
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
+        Dim args As String() = Environment.GetCommandLineArgs
+        Try
+            If args.Length > 1 Then
+                Dim data As String() = args(1).Split(":")
+                MKTVDBExternalCall(data(1), data(2))
+            End If
+        Catch ex As Exception
+        End Try
+
         Dim AppOpen As New DoubleAnimation(0, 520, New Duration(New TimeSpan(0, 0, 0, 1)))
         AppOpen.EasingFunction = New SineEase()
         AddHandler AppOpen.Completed, AddressOf InitTTViewer
@@ -39,12 +48,36 @@ Class MainWindow
         PanelClose = New DoubleAnimation(1140, 940, New Duration(New TimeSpan(0, 0, 0, 0, 500)))
         PanelClose.EasingFunction = New CircleEase
 
-        VehicleParts = JObject.Parse(File.ReadAllText("partlist.json"))
+        VehicleParts = JObject.Parse(File.ReadAllText(My.Application.Info.DirectoryPath & "\\partlist.json"))
         TTViewerMiiverseLinks = {"", "", "", "", "", ""}
         favourites = New List(Of VideoObject)
 
 
     End Sub
+
+    Private Sub MKTVDBExternalCall(Optional ByVal NNID As String = "", Optional ByVal YoutubeID As String = "")
+        MainWindowTabControl.SelectedIndex = 4
+        Dim query As New MktvDirectQuery(YoutubeID, NNID)
+        MktvVideos = query.Videos.ToArray
+        For Each currentVid As VideoObject In query.Videos
+            If Not YoutubeID = "" Then
+                Try
+                    Dim item As New VideoListItem()
+                    item.UploadDate = currentVid.uploadTime.ToString()
+                    item.Mode = currentVid.gameMode
+                    item.NNID = currentVid.nnid
+                    item.Name = currentVid.miiName
+                    item.Track = currentVid.track
+                    item.Character = currentVid.character
+                    SearchResults.Items.Add(item)
+                    SearchResults.SelectedIndex = 0
+                Catch ex As Exception
+
+                End Try
+            End If
+        Next
+    End Sub
+
 
     Private Sub InitTTViewer()
 
@@ -756,7 +789,7 @@ Class MainWindow
         Dim json As String
 
         Try
-            json = System.IO.File.ReadAllText("favourites.json")
+            json = System.IO.File.ReadAllText(My.Application.Info.DirectoryPath & "\\favourites.json")
             favourites = JsonConvert.DeserializeObject(Of List(Of VideoObject))(json)
 
             SearchResults.Items.Clear()
@@ -805,7 +838,7 @@ Class MainWindow
 
     Private Sub SaveFavourites()
         Dim json As String = JsonConvert.SerializeObject(favourites)
-        System.IO.File.WriteAllText("favourites.json", json)
+        System.IO.File.WriteAllText(My.Application.Info.DirectoryPath & "\\favourites.json", json)
     End Sub
 
 End Class
