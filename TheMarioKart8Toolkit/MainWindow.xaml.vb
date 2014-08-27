@@ -8,6 +8,9 @@ Imports MktvdbQuery
 
 Class MainWindow
 
+    Const CURRENT_VERSION As Integer = 1
+    Dim FavouritesFile As String
+
     Dim Timer As DispatcherTimer
     Dim PanelOpen, PanelClose As DoubleAnimation
     Dim IsPanelOpen As Boolean
@@ -15,8 +18,6 @@ Class MainWindow
     Dim PossibleTracks As Integer()
     Dim TTViewerMiiverseLinks As String()
     Dim MktvVideos As VideoObject()
-
-    Const CURRENT_VERSION As Integer = 1
 
     Dim MKTVMiiverseLink As String
     Dim MKTVMiiverseProfile As String
@@ -31,6 +32,10 @@ Class MainWindow
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
+        If Not Directory.Exists(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\\The Mario Kart 8 Toolkit") Then
+            Directory.CreateDirectory(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\\The Mario Kart 8 Toolkit")
+        End If
+        FavouritesFile = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\\The Mario Kart 8 Toolkit\\favourites.json"
 
         Dim args As String() = Environment.GetCommandLineArgs
         Try
@@ -677,7 +682,7 @@ Class MainWindow
             MKTVCharacterIcon.Source = New BitmapImage(New Uri("http://winepicgaming.de/mkapp/Images/" & currentVid.character & ".png"))
             MKTVMiiverseLink = currentVid.miiverseUrl
 
-            If MKTVMiiverseLink Is "None" Then
+            If Not MKTVMiiverseLink.Contains("://miiverse.nintendo.net/") Then
                 MiiversePost.Visibility = Windows.Visibility.Hidden
             Else
                 MiiversePost.Visibility = Windows.Visibility.Visible
@@ -809,7 +814,7 @@ Class MainWindow
         Dim json As String
 
         Try
-            json = System.IO.File.ReadAllText(My.Application.Info.DirectoryPath & "\\favourites.json")
+            json = System.IO.File.ReadAllText(FavouritesFile)
             favourites = JsonConvert.DeserializeObject(Of List(Of VideoObject))(json)
 
             SearchResults.Items.Clear()
@@ -858,7 +863,7 @@ Class MainWindow
 
     Private Sub SaveFavourites()
         Dim json As String = JsonConvert.SerializeObject(favourites)
-        System.IO.File.WriteAllText(My.Application.Info.DirectoryPath & "\\favourites.json", json)
+        System.IO.File.WriteAllText(FavouritesFile, json)
     End Sub
 
 End Class
