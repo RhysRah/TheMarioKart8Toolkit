@@ -498,8 +498,8 @@
         <Label x:Name="TableIcon" Content="&#xF0CE;" HorizontalAlignment="Left" Margin="-200,216,0,0" VerticalAlignment="Top" Width="200" Height="88" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
         <Label x:Name="TimeIcon" Content="&#xF017;" HorizontalAlignment="Left" Margin="-200,322,0,0" VerticalAlignment="Top" Width="200" Height="88" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
         <Label x:Name="MKTVIcon" Content="&#xF108;" HorizontalAlignment="Left" Margin="-200,430,0,0" VerticalAlignment="Top" Width="200" Height="90" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
-        <Label x:Name="AppVersion" Content="Version" HorizontalAlignment="Left" Height="28" Margin="875,492,0,0" VerticalAlignment="Top" Width="55" HorizontalContentAlignment="Right"/>
-        <Label x:Name="VisitThread" Content="Visit Thread" HorizontalAlignment="Left" Margin="0,492,0,0" VerticalAlignment="Top" Width="75" Height="28"/>
+        <Label x:Name="AppVersion" Content="Version" HorizontalAlignment="Left" Height="28" Margin="875,495,0,-3" VerticalAlignment="Top" Width="55" HorizontalContentAlignment="Right"/>
+        <Label x:Name="VisitThread" Content="Visit Thread" HorizontalAlignment="Left" Margin="0,495,0,-3" VerticalAlignment="Top" Width="75" Height="28"/>
 
 
 
