@@ -385,7 +385,7 @@ Class MainWindow
         Catch ex As Exception
 
         End Try
-      
+
     End Sub
 
     'Do not use this directly, use DoTTRankings instead

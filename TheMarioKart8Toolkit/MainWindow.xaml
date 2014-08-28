@@ -66,7 +66,7 @@
                     </Label>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Stats_Calculator" Header="Calculator" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5" Visibility="collapsed">
+            <TabItem x:Name="Stats_Calculator" Header="Calculator" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5" Visibility="Collapsed">
                 <Grid>
                     <Label Content="Speed (Air)" Height="24" Margin="10,77,774,223"/>
                     <Label Content="Speed (Water)" Height="24" Margin="10,53,774,247"/>
@@ -138,9 +138,6 @@
                         <ListBoxItem Content="Standard ATV/Standard Quad"/>
                         <ListBoxItem Content="Wild Wiggler"/>
                         <ListBoxItem Content="Teddy Buggy"/>
-                        <ListBoxItem Content="GLA (DLC)"/>
-                        <ListBoxItem Content="W 25 Silver Arrow (DLC)"/>
-                        <ListBoxItem Content="300 SL Roadster (DLC)"/>
                     </ComboBox>
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="478,0,0,0" SelectionChanged="WheelsChanged">
                         <ListBoxItem Content="Standard/Normal"/>
@@ -161,7 +158,6 @@
                         <ListBoxItem Content="Cyber Slick"/>
                         <ListBoxItem Content="Retro Off-Road"/>
                         <ListBoxItem Content="Gold Tires/Gold Wheels"/>
-                        <ListBoxItem Content="GLA Tires (DLC)"/>
                     </ComboBox>
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="643,0,0,0" SelectionChanged="GliderChanged">
                         <ListBoxItem Content="Super Glider"/>
@@ -177,18 +173,18 @@
                         <ListBoxItem Content="MKTV Parafoil"/>
                         <ListBoxItem Content="Gold Glider"/>
                     </ComboBox>
-                    <ProgressBar x:Name="SpeedGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,29,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="SpeedWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,53,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="SpeedAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,77,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="SpeedAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,101,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="WeightTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,148,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="AccelTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,124,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,172,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,196,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,220,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,244,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="MiniTurboTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,291,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="TractionTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,267,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,40,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,64,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,88,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,112,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="WeightTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,159,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="AccelTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,135,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,183,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,207,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,231,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="HandlingAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,255,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="MiniTurboTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,302,0,-2" Maximum="6"/>
+                    <ProgressBar x:Name="TractionTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,278,0,0" Maximum="6"/>
                     <Label x:Name="CharSpeedAir" Content="0" Height="24" Margin="147,77,626,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="CharSpeedWater" Content="0" Height="24" Margin="147,53,626,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="CharSpeedGround" Content="0" Height="24" Margin="147,29,626,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -237,18 +233,18 @@
                     <Label x:Name="GliderHandlingWater" Content="0" Height="24" Margin="643,196,130,104" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="GliderHandlingAntigrav" Content="0" Height="24" Margin="643,244,130,56" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="GliderWeight" Content="0" Height="24" Margin="643,148,130,152" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <Label x:Name="SpeedGroundString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,27,0,0" Width="115"/>
-                    <Label x:Name="SpeedWaterString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,51,0,0" Width="115"/>
-                    <Label x:Name="SpeedAirString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,75,0,0" Width="115"/>
-                    <Label x:Name="SpeedAntGravString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,98,0,0" Width="115"/>
-                    <Label x:Name="AccelString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,122,0,0" Width="115"/>
-                    <Label x:Name="WeightString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,146,0,0" Width="115"/>
-                    <Label x:Name="HandlingGroundString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,170,0,0" Width="115"/>
-                    <Label x:Name="HandlingWaterString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,194,0,0" Width="115"/>
-                    <Label x:Name="HandlingAirString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,218,0,0" Width="115"/>
-                    <Label x:Name="HandlingAntiGravString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,242,0,0" Width="115"/>
-                    <Label x:Name="TractionString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,266,0,0" Width="115"/>
-                    <Label x:Name="MiniTurboString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,290,0,0" Width="115"/>
+                    <Label x:Name="SpeedGroundString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,38,0,0" Width="102"/>
+                    <Label x:Name="SpeedWaterString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,62,0,0" Width="102"/>
+                    <Label x:Name="SpeedAirString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,86,0,0" Width="102"/>
+                    <Label x:Name="SpeedAntGravString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,109,0,0" Width="102"/>
+                    <Label x:Name="AccelString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,133,0,0" Width="102"/>
+                    <Label x:Name="WeightString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,157,0,0" Width="102"/>
+                    <Label x:Name="HandlingGroundString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,181,0,0" Width="102"/>
+                    <Label x:Name="HandlingWaterString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,205,0,0" Width="102"/>
+                    <Label x:Name="HandlingAirString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,229,0,0" Width="102"/>
+                    <Label x:Name="HandlingAntiGravString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,253,0,0" Width="102"/>
+                    <Label x:Name="TractionString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,277,0,0" Width="102"/>
+                    <Label x:Name="MiniTurboString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,301,0,-3" Width="102"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Collapsed">
