@@ -12,7 +12,6 @@ Public Class Updater
         AddHandler downloader.DownloadProgressChanged, AddressOf ChangeProgressBar
         AddHandler downloader.DownloadFileCompleted, AddressOf DownloadComplete
         downloader.DownloadFileAsync(New Uri("http://winepicgaming.de/MKapp/update2.zip"), "tmp")
-        ListBox1.Items.Add("Finished downloading, now installing.")
     End Sub
 
     Private Sub ChangeProgressBar(ByVal sender As Object, ByVal e As DownloadProgressChangedEventArgs)
@@ -20,16 +19,40 @@ Public Class Updater
     End Sub
 
     Private Sub DownloadComplete()
-        Dim file As ZipFile = ZipFile.Read("tmp")
-        file.ExtractAll(My.Application.Info.DirectoryPath, ExtractExistingFileAction.OverwriteSilently)
-        ListBox1.Items.Add("installation has finished, the update was installed successfully.")
-        file.Dispose()
+        ListBox1.Items.Add("Finished downloading, now installing.")
+
+        Dim tmpFile As ZipFile = ZipFile.Read("tmp")
+        tmpFile.ExtractAll(My.Application.Info.DirectoryPath, ExtractExistingFileAction.OverwriteSilently)
+        tmpFile.Dispose()
         My.Computer.FileSystem.DeleteFile("tmp")
         ListBox1.Items.Add("Deleted temporary update files.")
-        ListBox1.Items.Add("Restarting app")
+
+        If File.Exists("custom.bat") Then
+            ListBox1.Items.Add("Running customized install script...")
+            Dim cstmInstall As New Process
+            cstmInstall.EnableRaisingEvents = True
+            cstmInstall.StartInfo.UseShellExecute = False
+            cstmInstall.StartInfo.FileName = "custom.bat"
+            cstmInstall.StartInfo.RedirectStandardOutput = True
+            AddHandler cstmInstall.Exited, AddressOf FinalizeInstall
+            cstmInstall.Start()
+        Else
+            FinalizeInstall(Nothing, Nothing)
+        End If
+    End Sub
+
+
+    Private Sub FinalizeInstall(sender As Object, e As EventArgs)
+        ListBox1.Items.Add("Cleaning up...")
+        File.Delete("custom.bat")
+
+        ListBox1.Items.Add("Installation has finished, the update was installed successfully.")
+
+        ListBox1.Items.Add("Restarting application...")
         Dim p As New Process()
         p.StartInfo.FileName = "TheMarioKart8Toolkit.exe"
         p.Start()
         End
     End Sub
+
 End Class
