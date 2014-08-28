@@ -63,6 +63,7 @@ Class MainWindow
             Catch ex As Exception
 
             End Try
+
         End If
 
         Dim AppOpen As New DoubleAnimation(0, 520, New Duration(New TimeSpan(0, 0, 0, 1)))
@@ -378,8 +379,13 @@ Class MainWindow
     End Sub
 
     Private Sub DoTTRankings(id As Integer)
-        Dim d As New TTRankingDelegate(AddressOf DisplayTTRankings)
-        Me.Dispatcher.BeginInvoke(d, {id})
+        Try
+            Dim d As New TTRankingDelegate(AddressOf DisplayTTRankings)
+            Me.Dispatcher.BeginInvoke(d, {id})
+        Catch ex As Exception
+
+        End Try
+      
     End Sub
 
     'Do not use this directly, use DoTTRankings instead
