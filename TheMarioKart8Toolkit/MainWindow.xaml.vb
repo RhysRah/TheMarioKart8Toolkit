@@ -8,7 +8,7 @@ Imports MktvdbQuery
 
 Class MainWindow
 
-    Const CURRENT_VERSION As Integer = 3
+    Const CURRENT_VERSION As Integer = 4
     Dim FavouritesFile As String
 
     Dim Timer As DispatcherTimer
@@ -31,7 +31,7 @@ Class MainWindow
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
-        Dim AppVer As String = "1010.28082014"
+        Dim AppVer As String = "1011.29082014"
         AppVersion.Content = "Build " & AppVer
 
 
@@ -660,8 +660,6 @@ Class MainWindow
         Dim UploadedBeforeDate As DateTime = UploadedBefore.SelectedDate
 
         Dim Search As New MktvDatabaseSearch(UploadedBeforeDate.AddDays(1), UploadedAfter.SelectedDate, DirectCast(GameModeSearch.SelectedItem, ListBoxItem).Content, DirectCast(TrackSearch.SelectedItem, ListBoxItem).Content, DirectCast(CharacterSearch.SelectedItem, ListBoxItem).Content, SearchMiiName.Text, SearchNNID.Text)
-
-        MsgBox(Search.queryString)
 
         SearchResults.Items.Clear()
 
