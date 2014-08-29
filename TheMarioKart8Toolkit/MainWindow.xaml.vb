@@ -8,7 +8,7 @@ Imports MktvdbQuery
 
 Class MainWindow
 
-    Const CURRENT_VERSION As Integer = 2
+    Const CURRENT_VERSION As Integer = 3
     Dim FavouritesFile As String
 
     Dim Timer As DispatcherTimer
@@ -31,7 +31,7 @@ Class MainWindow
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
-        Dim AppVer As String = "1000.27082014"
+        Dim AppVer As String = "1010.28082014"
         AppVersion.Content = "Build " & AppVer
 
 

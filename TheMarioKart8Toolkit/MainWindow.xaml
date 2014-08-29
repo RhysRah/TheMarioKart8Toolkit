@@ -138,6 +138,9 @@
                         <ListBoxItem Content="Standard ATV/Standard Quad"/>
                         <ListBoxItem Content="Wild Wiggler"/>
                         <ListBoxItem Content="Teddy Buggy"/>
+                        <ListBoxItem Content="GLA (DLC)"/>
+                        <ListBoxItem Content="W 25 Silver Arrow (DLC)"/>
+                        <ListBoxItem Content="300 SL Roadster (DLC)"/>
                     </ComboBox>
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="478,0,0,0" SelectionChanged="WheelsChanged">
                         <ListBoxItem Content="Standard/Normal"/>
@@ -158,6 +161,7 @@
                         <ListBoxItem Content="Cyber Slick"/>
                         <ListBoxItem Content="Retro Off-Road"/>
                         <ListBoxItem Content="Gold Tires/Gold Wheels"/>
+                        <ListBoxItem Content="GLA Tires (DLC)"/>
                     </ComboBox>
                     <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="643,0,0,0" SelectionChanged="GliderChanged">
                         <ListBoxItem Content="Super Glider"/>
