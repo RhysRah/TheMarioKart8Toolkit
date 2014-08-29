@@ -82,6 +82,10 @@ Class MainWindow
         favourites = New List(Of VideoObject)
 
 
+        UploadedBefore.DisplayDateEnd = Date.Today
+        UploadedBefore.DisplayDate = Date.Today
+        UploadedAfter.DisplayDateEnd = Date.Today
+
     End Sub
 
     Private Sub MKTVDBExternalCall(Optional ByVal NNID As String = "", Optional ByVal YoutubeID As String = "")
@@ -653,7 +657,11 @@ Class MainWindow
     End Sub
 
     Private Sub SearchMKTVDB()
-        Dim Search As New MktvDatabaseSearch(UploadedAfter.DisplayDate, UploadedBefore.DisplayDate, DirectCast(GameModeSearch.SelectedItem, ListBoxItem).Content, DirectCast(TrackSearch.SelectedItem, ListBoxItem).Content, DirectCast(CharacterSearch.SelectedItem, ListBoxItem).Content, SearchMiiName.Text, SearchNNID.Text)
+        Dim UploadedBeforeDate As DateTime = UploadedBefore.SelectedDate
+
+        Dim Search As New MktvDatabaseSearch(UploadedBeforeDate.AddDays(1), UploadedAfter.SelectedDate, DirectCast(GameModeSearch.SelectedItem, ListBoxItem).Content, DirectCast(TrackSearch.SelectedItem, ListBoxItem).Content, DirectCast(CharacterSearch.SelectedItem, ListBoxItem).Content, SearchMiiName.Text, SearchNNID.Text)
+
+        MsgBox(Search.queryString)
 
         SearchResults.Items.Clear()
 
