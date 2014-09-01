@@ -881,6 +881,22 @@ Class MainWindow
         System.IO.File.WriteAllText(FavouritesFile, json)
     End Sub
 
+    Private Sub SettingsHighlight(sender As Object, e As MouseEventArgs) Handles SettingsIcon.MouseEnter
+        SettingsIcon.Foreground = Brushes.RoyalBlue
+    End Sub
+
+    Private Sub SettingsLeave(sender As Object, e As MouseEventArgs) Handles SettingsIcon.MouseLeave
+        SettingsIcon.Foreground = Brushes.Black
+    End Sub
+
+    Private Sub OpenSettings(sender As Object, e As RoutedEventArgs) Handles SettingsIcon.Click
+        Try
+            Dim SettingsWindows As New Window2(Me)
+            SettingsWindows.ShowDialog()
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
 
 Public Class VideoListItem

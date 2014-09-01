@@ -53,15 +53,16 @@ Partial Friend NotInheritable Class MySettings
         End Get
     End Property
     
-    <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database1.mdf;Integr"& _ 
-        "ated Security=True")>  _
-    Public ReadOnly Property StatsCalculatorData() As String
+     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+    Public Property CustomBackgroundPath() As String
         Get
-            Return CType(Me("StatsCalculatorData"),String)
+            Return CType(Me("CustomBackgroundPath"),String)
         End Get
+        Set
+            Me("CustomBackgroundPath") = value
+        End Set
     End Property
 End Class
 

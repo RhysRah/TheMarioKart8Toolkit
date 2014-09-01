@@ -1,0 +1,88 @@
+﻿<Window x:Class="Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window2" Height="401.645" Width="743.092" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border 
+           x:Name="Border"  
+           CornerRadius="0" 
+           BorderThickness="0"
+           >
+                            <ContentPresenter 
+             Margin="2"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Foreground" Value="#FF494949" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
+                                <Setter Property="Foreground" Value="#888888"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="WindowBackground" MouseDown="DragWindow">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/SettingsBack.png" Stretch="None"/>
+        </Grid.Background>
+        <Label BorderBrush="Transparent" Content="&#xf013; Settings" HorizontalAlignment="Center" Height="88" Margin="191,10,193.2,0" VerticalAlignment="Top" Width="359" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="72" RenderTransformOrigin="0.074,-0.114" Background="Transparent"/>
+        <Button Background="Transparent" BorderBrush="Transparent" x:Name="CloseSettings" Content="&#xF00D;" HorizontalAlignment="Left" Margin="708,10,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
+        <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="282" Margin="10,103,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="106"/>
+        <TabControl HorizontalAlignment="Left" Height="282" Margin="121,103,0,0" VerticalAlignment="Top" Width="606" Background="{x:Null}" BorderBrush="Transparent">
+            <TabItem x:Name="StyleTab" Header="Style" Height="22" Margin="-2,-2,-2.4,0" VerticalAlignment="Top">
+                <Grid Margin="0,0,-0.2,0">
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Margin="300,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <Label Content="Themes" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="LightThemeButton" Content="&#xf205;" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="36" FontSize="28"/>
+                    <Label x:Name="DarkThemeButton" Content="&#xf204;" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="36" FontSize="28" MouseDown="DarkThemeSelected"/>
+                    <Label Content="&#xf07c;" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="37"/>
+                    <Label Content="Change Background" HorizontalAlignment="Left" Margin="62,194,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label Content="Dark Theme" HorizontalAlignment="Left" Margin="62,140,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label Content="Light Theme" HorizontalAlignment="Left" Margin="62,89,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label Content="Ease Of Access" HorizontalAlignment="Left" Margin="311,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
+                    <Label Content="Menu bar open by default" HorizontalAlignment="Left" Margin="353,61,0,0" FontSize="20" Width="238" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label Content="&#xF205;" HorizontalAlignment="Left" Margin="311,165,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
+                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="306,62,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="36" FontSize="28"/>
+                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="311,193,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
+                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="311,221,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
+                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="453,193,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
+                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="453,221,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
+                    <Label Content="Homepage" HorizontalAlignment="Left" Margin="339,164,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Stats Calculator" HorizontalAlignment="Left" Margin="339,191,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Clan War Table" HorizontalAlignment="Left" Margin="339,220,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Time Trial Viewer" HorizontalAlignment="Left" Margin="486,192,0,0" VerticalAlignment="Top"/>
+                    <Label Content="MKTV Database" HorizontalAlignment="Left" Margin="486,221,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Choose what tool loads on start-up" HorizontalAlignment="Left" Margin="311,132,0,0" VerticalAlignment="Top" Width="290" FontSize="16" HorizontalContentAlignment="Center"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="AccountTab" Header="Account">
+                <Grid/>
+            </TabItem>
+        </TabControl>
+        <Label Content="&#xf007;" HorizontalAlignment="Left" Margin="18,247,0,0" VerticalAlignment="Top" Width="90" Height="90" FontFamily="/Fonts/#FontAwesome" FontSize="85" HorizontalContentAlignment="Center"/>
+        <Label Content="&#xf1fc;" HorizontalAlignment="Left" Margin="18,117,0,0" VerticalAlignment="Top" Width="90" Height="90" FontFamily="/Fonts/#FontAwesome" HorizontalContentAlignment="Center" FontSize="70"/>
+        <Label Content="Style" HorizontalAlignment="Left" Margin="18,212,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontSize="15"/>
+        <Label Content="Account" HorizontalAlignment="Left" Margin="18,342,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Center" FontSize="15"/>
+
+    </Grid>
+</Window>

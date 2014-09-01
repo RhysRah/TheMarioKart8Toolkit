@@ -43,12 +43,12 @@
     </Window.Resources>
     <Grid HorizontalAlignment="Right">
         <Grid.Background>
-            <ImageBrush ImageSource="Images/BG.png" Stretch="Uniform"/>
+            <ImageBrush ImageSource="Images\BG.png" Stretch="None"/>
         </Grid.Background>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Width="940" Height="35" Background="#00000000" MouseDown="DragWindow" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="CloseWindow" Content="&#xF00D;" HorizontalAlignment="Left" Margin="905,5,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
         <Button x:Name="MinimiseWindow" Content="&#xF068;" HorizontalAlignment="Left" Margin="875,6,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
-        <Image HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="940                " Source="Images/Logo.png" Margin="0,35,0,0" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="940" Source="Images/Logo.png" Margin="0,35,0,0" Stretch="Fill"/>
         <Button x:Name="MenuButton" Content="&#xF0C9;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="10,5,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="520" Margin="-200,0,0,0" VerticalAlignment="Top" Width="200">
             <Rectangle.Fill>
@@ -498,12 +498,13 @@
         <Label Content="Time Trial Viewer" HorizontalAlignment="Left" Margin="-150,384,0,0" VerticalAlignment="Top"/>
         <Label Content="MKTV Database" HorizontalAlignment="Left" Margin="-145,494,0,0" VerticalAlignment="Top"/>
         <Label x:Name="HomepageIcon" Content="&#xF015;" HorizontalAlignment="Left" Margin="-200,0,0,0" VerticalAlignment="Top" Width="200" Height="89" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
-        <Label x:Name="CalculatorIcon" Content="&#xF067; &#xF068;" HorizontalAlignment="Left" Margin="-200,108,0,0" VerticalAlignment="Top" Width="200" Height="89" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
+        <Label x:Name="CalculatorIcon" Content="&#xf1ec;" HorizontalAlignment="Left" Margin="-200,108,0,0" VerticalAlignment="Top" Width="200" Height="89" FontFamily="/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
         <Label x:Name="TableIcon" Content="&#xF0CE;" HorizontalAlignment="Left" Margin="-200,216,0,0" VerticalAlignment="Top" Width="200" Height="88" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
         <Label x:Name="TimeIcon" Content="&#xF017;" HorizontalAlignment="Left" Margin="-200,322,0,0" VerticalAlignment="Top" Width="200" Height="88" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
         <Label x:Name="MKTVIcon" Content="&#xF108;" HorizontalAlignment="Left" Margin="-200,430,0,0" VerticalAlignment="Top" Width="200" Height="90" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
         <Label x:Name="AppVersion" Content="Version" HorizontalAlignment="Left" Height="28" Margin="659,495,0,-3" VerticalAlignment="Top" Width="271" HorizontalContentAlignment="Right"/>
         <Label x:Name="VisitThread" Content="Visit Thread" HorizontalAlignment="Left" Margin="0,495,0,-3" VerticalAlignment="Top" Width="75" Height="28"/>
+        <Button x:Name="SettingsIcon" Content="&#xF013;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="40,5,0,0"/>
 
 
 
