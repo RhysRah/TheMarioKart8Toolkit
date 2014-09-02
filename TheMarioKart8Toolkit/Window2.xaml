@@ -47,17 +47,16 @@
         <Label BorderBrush="Transparent" Content="&#xf013; Settings" HorizontalAlignment="Center" Height="88" Margin="191,10,193.2,0" VerticalAlignment="Top" Width="359" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="72" RenderTransformOrigin="0.074,-0.114" Background="Transparent"/>
         <Button Background="Transparent" BorderBrush="Transparent" x:Name="CloseSettings" Content="&#xF00D;" HorizontalAlignment="Left" Margin="708,10,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="282" Margin="10,103,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="106"/>
-        <TabControl HorizontalAlignment="Left" Height="282" Margin="121,103,0,0" VerticalAlignment="Top" Width="606" Background="{x:Null}" BorderBrush="Transparent">
+        <TabControl HorizontalAlignment="Left" Height="282" Margin="121,103,0,0" VerticalAlignment="Top" Width="606" Background="{x:Null}" BorderBrush="Transparent" SelectionChanged="UpdateWindowWithTheme" Loaded="UpdateWindowWithThemeStartup">
             <TabItem x:Name="StyleTab" Header="Style" Height="22" Margin="-2,-2,-2.4,0" VerticalAlignment="Top">
                 <Grid Margin="0,0,-0.2,0">
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Margin="300,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
                     <Label Content="Themes" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
-                    <Label x:Name="LightThemeButton" Content="&#xf205;" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="36" FontSize="28"/>
-                    <Label x:Name="DarkThemeButton" Content="&#xf204;" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="36" FontSize="28" MouseDown="DarkThemeSelected"/>
-                    <Label Content="&#xf07c;" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="37"/>
-                    <Label Content="Change Background" HorizontalAlignment="Left" Margin="62,194,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <Label Content="Dark Theme" HorizontalAlignment="Left" Margin="62,140,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <Label Content="Light Theme" HorizontalAlignment="Left" Margin="62,89,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="ThemeButton" Content="&#xf205;" HorizontalAlignment="Left" Margin="124,89,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="37" FontSize="28"/>
+                    <Label Content="&#xf07c;" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="37"/>
+                    <Label Content="Change Background" HorizontalAlignment="Left" Margin="62,146,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label Content="Dark Theme" HorizontalAlignment="Left" Margin="0,89,0,0" FontSize="20" Width="124" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
+                    <Label Content="Light Theme" HorizontalAlignment="Left" Margin="171,89,0,0" FontSize="20" Width="124" VerticalAlignment="Top"/>
                     <Label Content="Ease Of Access" HorizontalAlignment="Left" Margin="311,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
                     <Label Content="Menu bar open by default" HorizontalAlignment="Left" Margin="353,61,0,0" FontSize="20" Width="238" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                     <Label Content="&#xF205;" HorizontalAlignment="Left" Margin="311,165,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>

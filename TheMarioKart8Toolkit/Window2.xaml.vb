@@ -19,22 +19,91 @@
         DragMove()
     End Sub
 
-    Private Sub DarkThemeSelected(sender As Object, e As MouseButtonEventArgs)
+    Private Sub DarkThemeSelected()
 
         Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BGDark.png", UriKind.Absolute)))
         BackgroundBrush.Stretch = Stretch.None
         WindowBackground.Background = BackgroundBrush
-        UpdateLayout()
-        DarkThemeButton.Content = ChrW(&HF205)
-        LightThemeButton.Content = ChrW(&HF204)
-        DarkThemeButton.Foreground = Brushes.White
-        LightThemeButton.Foreground = Brushes.White
-        Label = Brushes.White
-    End Sub
+        MainWindowSettings.MainWindowGrid.Background = BackgroundBrush
+        ThemeButton.Content = ChrW(&HF204)
+        For Each currentDependencyObject As DependencyObject In Utils.FindVisualChildren(WindowBackground)
+            If TypeOf currentDependencyObject Is Control Then
+                DirectCast(currentDependencyObject, Control).Foreground = Brushes.White
+            End If
+        Next
 
+        MainWindowSettings.EnableDarkTheme()
+
+        My.Settings.IsDarkTheme = True
+        My.Settings.Save()
+
+        MainWindowSettings.NoHighlightColor = Brushes.White
+
+    End Sub
+    Private Sub LightThemeSelected()
+        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BG.png", UriKind.Absolute)))
+        BackgroundBrush.Stretch = Stretch.None
+        WindowBackground.Background = BackgroundBrush
+        MainWindowSettings.MainWindowGrid.Background = BackgroundBrush
+        ThemeButton.Content = ChrW(&HF205)
+        For Each currentDependencyObject As DependencyObject In Utils.FindVisualChildren(WindowBackground)
+            If TypeOf currentDependencyObject Is Control Then
+                DirectCast(currentDependencyObject, Control).Foreground = Brushes.Black
+            End If
+        Next
+
+        MainWindowSettings.EnableLightTheme()
+
+        My.Settings.IsDarkTheme = False
+        My.Settings.Save()
+
+        MainWindowSettings.NoHighlightColor = Brushes.Black
+    End Sub
     Public Sub New(ByRef Window As MainWindow)
         MyBase.New()
         InitializeComponent()
         MainWindowSettings = Window
     End Sub
+
+    Private Sub UpdateWindowWithTheme(sender As Object, e As SelectionChangedEventArgs)
+        If My.Settings.IsDarkTheme Then
+            DarkThemeSelected()
+        End If
+    End Sub
+
+    Private Sub UpdateWindowWithThemeStartup(sender As Object, e As RoutedEventArgs)
+        If My.Settings.IsDarkTheme Then
+            DarkThemeSelected()
+        End If
+    End Sub
+
+    Private Sub SwitchTheme(sender As Object, e As MouseButtonEventArgs) Handles ThemeButton.MouseDown
+        If My.Settings.IsDarkTheme Then
+            LightThemeSelected()
+        Else
+            DarkThemeSelected()
+        End If
+    End Sub
 End Class
+
+
+
+
+Public Class Utils
+    Public Shared Function FindVisualChildren(theDependencyObject As DependencyObject) As List(Of DependencyObject)
+        Dim results As New List(Of DependencyObject)
+        If theDependencyObject IsNot Nothing Then
+            For i As Integer = 0 To VisualTreeHelper.GetChildrenCount(theDependencyObject) - 1
+                Dim child As DependencyObject = VisualTreeHelper.GetChild(theDependencyObject, i)
+                If child IsNot Nothing AndAlso TypeOf child Is DependencyObject Then
+                    results.Add(DirectCast(child, DependencyObject))
+                End If
+                For Each childOfChild As DependencyObject In FindVisualChildren(child)
+                    results.Add(childOfChild)
+                Next
+            Next
+        End If
+        Return results
+    End Function
+End Class
+

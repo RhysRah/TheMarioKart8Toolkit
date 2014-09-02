@@ -11,6 +11,8 @@ Class MainWindow
     Const CURRENT_VERSION As Integer = 4
     Dim FavouritesFile As String
 
+
+    Public NoHighlightColor As Brush
     Dim Timer As DispatcherTimer
     Dim PanelOpen, PanelClose As DoubleAnimation
     Dim IsPanelOpen As Boolean
@@ -26,6 +28,8 @@ Class MainWindow
     Dim AreFavShown As Boolean
     Dim DontCheckUpdate As Boolean
 
+    Private Property NeedToChangeTheme As Boolean
+
     Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
 
 #Region "Main Window"
@@ -33,6 +37,13 @@ Class MainWindow
 
         Dim AppVer As String = "1011.29082014"
         AppVersion.Content = "Build " & AppVer
+
+
+        If My.Settings.IsDarkTheme Then
+            NoHighlightColor = Brushes.White
+        Else
+            NoHighlightColor = Brushes.Black
+        End If
 
 
         If Not Directory.Exists(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\\The Mario Kart 8 Toolkit") Then
@@ -83,9 +94,47 @@ Class MainWindow
 
 
         UploadedBefore.DisplayDateEnd = Date.Today
-        UploadedBefore.DisplayDate = Date.Today
+        UploadedBefore.SelectedDate = Date.Today
         UploadedAfter.DisplayDateEnd = Date.Today
+        UploadedAfter.SelectedDate = UploadedAfter.DisplayDateStart
 
+        If My.Settings.IsDarkTheme Then
+            EnableDarkTheme()
+        Else
+            EnableLightTheme()
+        End If
+    End Sub
+
+    Public Sub EnableLightTheme()
+        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BG.png", UriKind.Absolute)))
+        BackgroundBrush.Stretch = Stretch.None
+        MainWindowGrid.Background = BackgroundBrush
+
+        Dim CheckerBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/Checker.png", UriKind.Absolute)))
+        CheckerBrush.Stretch = Stretch.Fill
+        SlideOutPanelRectangle.Fill = CheckerBrush
+
+        For Each currentDependencyObject As DependencyObject In Utils.FindVisualChildren(Me)
+            If TypeOf currentDependencyObject Is Control And Not TypeOf currentDependencyObject Is ComboBox And Not TypeOf currentDependencyObject Is ListBoxItem And Not TypeOf currentDependencyObject Is DatePicker And Not TypeOf currentDependencyObject Is ProgressBar Then
+                DirectCast(currentDependencyObject, Control).Foreground = Brushes.Black
+            End If
+        Next
+    End Sub
+
+    Public Sub EnableDarkTheme()
+        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BGDark.png", UriKind.Absolute)))
+        BackgroundBrush.Stretch = Stretch.None
+        MainWindowGrid.Background = BackgroundBrush
+
+        Dim CheckerBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/CheckerDark.png", UriKind.Absolute)))
+        CheckerBrush.Stretch = Stretch.Fill
+        SlideOutPanelRectangle.Fill = CheckerBrush
+
+        For Each currentDependencyObject As DependencyObject In Utils.FindVisualChildren(Me)
+            If TypeOf currentDependencyObject Is Control And Not TypeOf currentDependencyObject Is ComboBox And Not TypeOf currentDependencyObject Is ListBoxItem And Not TypeOf currentDependencyObject Is DatePicker And Not TypeOf currentDependencyObject Is ProgressBar Then
+                DirectCast(currentDependencyObject, Control).Foreground = Brushes.White
+            End If
+        Next
     End Sub
 
     Private Sub MKTVDBExternalCall(Optional ByVal NNID As String = "", Optional ByVal YoutubeID As String = "")
@@ -139,11 +188,11 @@ Class MainWindow
     End Sub
 
     Private Sub MinimiseLeave(sender As Object, e As MouseEventArgs) Handles MinimiseWindow.MouseLeave
-        MinimiseWindow.Foreground = Brushes.Black
+        MinimiseWindow.Foreground = NoHighlightColor
     End Sub
 
     Private Sub CloseLeave(sender As Object, e As MouseEventArgs) Handles CloseWindow.MouseLeave
-        CloseWindow.Foreground = Brushes.Black
+        CloseWindow.Foreground = NoHighlightColor
     End Sub
 
     Private Sub CloseHighlight(sender As Object, e As MouseEventArgs) Handles CloseWindow.MouseEnter
@@ -167,7 +216,7 @@ Class MainWindow
     End Sub
 
     Private Sub MenuLeave(sender As Object, e As MouseEventArgs) Handles MenuButton.MouseLeave
-        MenuButton.Foreground = Brushes.Black
+        MenuButton.Foreground = NoHighlightColor
     End Sub
 
     Private Sub MenuButton_Click(sender As Object, e As RoutedEventArgs) Handles MenuButton.Click
@@ -185,7 +234,7 @@ Class MainWindow
     End Sub
 
     Private Sub IconLeave(sender As Object, e As MouseEventArgs) Handles HomepageIcon.MouseLeave, CalculatorIcon.MouseLeave, TableIcon.MouseLeave, TimeIcon.MouseLeave, MKTVIcon.MouseLeave, VisitThread.MouseLeave
-        DirectCast(sender, Label).Foreground = Brushes.Black
+        DirectCast(sender, Label).Foreground = NoHighlightColor
         DirectCast(sender, Label).Effect = Nothing
     End Sub
 
@@ -331,7 +380,7 @@ Class MainWindow
             Case 0 To 2.5
                 DirectCast(sender, ProgressBar).Foreground = Brushes.Red
             Case 2.5 To 4.5
-                DirectCast(sender, ProgressBar).Foreground = Brushes.Yellow
+                DirectCast(sender, ProgressBar).Foreground = Brushes.Orange
             Case 4.5 To 6
                 DirectCast(sender, ProgressBar).Foreground = Brushes.Green
         End Select
@@ -636,23 +685,23 @@ Class MainWindow
     End Sub
 
     Private Sub ShareLeave(sender As Object, e As MouseEventArgs) Handles ShareButton.MouseLeave
-        ShareButton.Foreground = Brushes.Black
+        ShareButton.Foreground = NoHighlightColor
         ShareButton.Effect = Nothing
     End Sub
 
 
     Private Sub AddRemoveLeave(sender As Object, e As MouseEventArgs) Handles AddRemoveFavsButton.MouseLeave
-        AddRemoveFavsButton.Foreground = Brushes.Black
+        AddRemoveFavsButton.Foreground = NoHighlightColor
         AddRemoveFavsButton.Effect = Nothing
     End Sub
 
     Private Sub FavouritesLeave(sender As Object, e As MouseEventArgs) Handles ShowFavsButton.MouseLeave
-        ShowFavsButton.Foreground = Brushes.Black
+        ShowFavsButton.Foreground = NoHighlightColor
         ShowFavsButton.Effect = Nothing
     End Sub
 
     Private Sub SearchLeave(sender As Object, e As MouseEventArgs) Handles SearchButton.MouseLeave
-        SearchButton.Foreground = Brushes.Black
+        SearchButton.Foreground = NoHighlightColor
         SearchButton.Effect = Nothing
     End Sub
 
@@ -681,7 +730,6 @@ Class MainWindow
 
     Private Sub Search(sender As Object, e As RoutedEventArgs) Handles SearchButton.Click
         SearchMKTVDB()
-
         AddRemoveFavsButton.Content = ChrW(&HF055)
     End Sub
 
@@ -693,7 +741,11 @@ Class MainWindow
             MKTVMiiIcon.Source = New BitmapImage(New Uri(currentVid.miiIconUrl))
             MKTVMiiName.Content = currentVid.miiName
             MKTVGameMode.Content = currentVid.gameMode
-            MKTVYoutubeVideo.Source = New Uri("https://www.youtube.com/embed/" & currentVid.youtubeId & "?fs=1&autohide=1&autoplay=1&theme=light&vq=hd720")
+            If My.Settings.IsDarkTheme Then
+                MKTVYoutubeVideo.Source = New Uri("https://www.youtube.com/embed/" & currentVid.youtubeId & "?fs=1&autohide=1&autoplay=1&vq=hd720")
+            Else
+                MKTVYoutubeVideo.Source = New Uri("https://www.youtube.com/embed/" & currentVid.youtubeId & "?fs=1&autohide=1&autoplay=1&theme=light&vq=hd720")
+            End If
             MKTVCharacterIcon.Source = New BitmapImage(New Uri("http://winepicgaming.de/mkapp/Images/" & currentVid.character & ".png"))
             MKTVMiiverseLink = currentVid.miiverseUrl
 
@@ -804,7 +856,7 @@ Class MainWindow
 
             End Select
 
-            ShareButton.IsEnabled = True
+            ShareButton.Visibility = Windows.Visibility.Visible
         Catch ex As Exception
 
         End Try
@@ -886,7 +938,7 @@ Class MainWindow
     End Sub
 
     Private Sub SettingsLeave(sender As Object, e As MouseEventArgs) Handles SettingsIcon.MouseLeave
-        SettingsIcon.Foreground = Brushes.Black
+        SettingsIcon.Foreground = NoHighlightColor
     End Sub
 
     Private Sub OpenSettings(sender As Object, e As RoutedEventArgs) Handles SettingsIcon.Click
@@ -896,6 +948,22 @@ Class MainWindow
         Catch ex As Exception
 
         End Try
+    End Sub
+
+
+    Private Sub ReloadTheme(sender As Object, e As SelectionChangedEventArgs) Handles MainWindowTabControl.SelectionChanged
+        NeedToChangeTheme = True
+    End Sub
+
+    Private Sub TabItemLayoutUpdated(sender As Object, e As EventArgs) Handles MKTV_Database.LayoutUpdated
+        If NeedToChangeTheme Then
+            If My.Settings.IsDarkTheme Then
+                EnableDarkTheme()
+            Else
+                EnableLightTheme()
+            End If
+            NeedToChangeTheme = False
+        End If
     End Sub
 End Class
 

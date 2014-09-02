@@ -41,7 +41,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid HorizontalAlignment="Right">
+    <Grid x:Name="MainWindowGrid" HorizontalAlignment="Right">
         <Grid.Background>
             <ImageBrush ImageSource="Images\BG.png" Stretch="None"/>
         </Grid.Background>
@@ -50,7 +50,7 @@
         <Button x:Name="MinimiseWindow" Content="&#xF068;" HorizontalAlignment="Left" Margin="875,6,0,0" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
         <Image HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="940" Source="Images/Logo.png" Margin="0,35,0,0" Stretch="Fill"/>
         <Button x:Name="MenuButton" Content="&#xF0C9;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="10,5,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="520" Margin="-200,0,0,0" VerticalAlignment="Top" Width="200">
+        <Rectangle x:Name="SlideOutPanelRectangle" HorizontalAlignment="Left" Height="520" Margin="-200,0,0,0" VerticalAlignment="Top" Width="200">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Images/Checker.png"/>
             </Rectangle.Fill>
@@ -59,14 +59,14 @@
             <TabControl.Background>
                 <SolidColorBrush Color="Transparent" Opacity="0"/>
             </TabControl.Background>
-            <TabItem x:Name="Homepage" Header="Homepage" Visibility="Collapsed">
+            <TabItem x:Name="Homepage" Header="Homepage" Visibility="Collapsed" LayoutUpdated="TabItemLayoutUpdated">
                 <Grid>
                     <Label Margin="10,10,9.6,9.6">
                         <TextBlock FontFamily="Segoe UI Light" FontSize="22"><Run Text="Welcome to The Mario Kart 8 App! This app includes many useful tools for Mario"/><Run Text=" Kart 8:"/><LineBreak/><LineBreak/><Run Text="- Stats Calculator"/><LineBreak/><Run Text="- Clan War Table"/><LineBreak/><Run Text="- Time Trial Viewer"/><LineBreak/><Run Text="- MKTV Database"/><LineBreak/><LineBreak/><Run Text="Many updates will be released over time."/><LineBreak/><Run Text="Enjoy!"/></TextBlock>
                     </Label>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Stats_Calculator" Header="Calculator" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5" Visibility="Collapsed">
+            <TabItem x:Name="Stats_Calculator" Header="Calculator" Height="22" Margin="-2.4,-2,-1.8,0" VerticalAlignment="Top" RenderTransformOrigin="0.501,0.5" Visibility="Collapsed" LayoutUpdated="TabItemLayoutUpdated">
                 <Grid>
                     <Label Content="Speed (Air)" Height="24" Margin="10,77,774,223"/>
                     <Label Content="Speed (Water)" Height="24" Margin="10,53,774,247"/>
@@ -80,7 +80,7 @@
                     <Label Content="Handling (Water)" Height="24" Margin="10,196,774,104"/>
                     <Label Content="Handling (Anti-Gravity)" Height="24" Margin="10,244,774,56"/>
                     <Label Content="Weight" Height="24" Margin="10,148,774,152"/>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="147,0,0,0" SelectionChanged="CharacterChanged">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="147,0,0,0" SelectionChanged="CharacterChanged" Background="{x:Null}">
                         <ListBoxItem Content="Baby Mario"/>
                         <ListBoxItem Content="Baby Luigi"/>
                         <ListBoxItem Content="Baby Peach"/>
@@ -111,7 +111,7 @@
                         <ListBoxItem Content="Wario"/>
                         <ListBoxItem Content="Morton"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="313,0,0,0" SelectionChanged="BodyChanged">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Margin="313,0,0,0" SelectionChanged="BodyChanged" Background="{x:Null}">
                         <ListBoxItem Content="Standard Kart"/>
                         <ListBoxItem Content="Pipe Frame"/>
                         <ListBoxItem Content="Mach 8"/>
@@ -142,7 +142,7 @@
                         <ListBoxItem Content="W 25 Silver Arrow (DLC)"/>
                         <ListBoxItem Content="300 SL Roadster (DLC)"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="478,0,0,0" SelectionChanged="WheelsChanged">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="478,0,0,0" SelectionChanged="WheelsChanged" Background="{x:Null}">
                         <ListBoxItem Content="Standard/Normal"/>
                         <ListBoxItem Content="Monster"/>
                         <ListBoxItem Content="Roller"/>
@@ -163,7 +163,7 @@
                         <ListBoxItem Content="Gold Tires/Gold Wheels"/>
                         <ListBoxItem Content="GLA Tires (DLC)"/>
                     </ComboBox>
-                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="643,0,0,0" SelectionChanged="GliderChanged">
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="161" Margin="643,0,0,0" SelectionChanged="GliderChanged" Background="{x:Null}">
                         <ListBoxItem Content="Super Glider"/>
                         <ListBoxItem Content="Cloud Glider"/>
                         <ListBoxItem Content="Wario Wing"/>
@@ -177,18 +177,18 @@
                         <ListBoxItem Content="MKTV Parafoil"/>
                         <ListBoxItem Content="Gold Glider"/>
                     </ComboBox>
-                    <ProgressBar x:Name="SpeedGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,40,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="SpeedWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,64,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="SpeedAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,88,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="SpeedAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,112,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="WeightTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,159,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="AccelTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,135,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,183,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,207,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,231,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="HandlingAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,255,0,0" Maximum="6"/>
-                    <ProgressBar x:Name="MiniTurboTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,302,0,-2" Maximum="6"/>
-                    <ProgressBar x:Name="TractionTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,278,0,0" Maximum="6"/>
+                    <ProgressBar x:Name="SpeedGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,40,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="SpeedWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,64,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="SpeedAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,88,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="SpeedAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,112,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="WeightTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,159,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="AccelTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,135,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="HandlingGroundTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,183,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="HandlingWaterTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,207,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="HandlingAirTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,231,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="HandlingAntiGravTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,255,0,0" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="MiniTurboTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,302,0,-2" Maximum="6" Background="{x:Null}"/>
+                    <ProgressBar x:Name="TractionTotal" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="115" Margin="809,278,0,0" Maximum="6" Background="{x:Null}"/>
                     <Label x:Name="CharSpeedAir" Content="0" Height="24" Margin="147,77,626,223" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="CharSpeedWater" Content="0" Height="24" Margin="147,53,626,247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="CharSpeedGround" Content="0" Height="24" Margin="147,29,626,271" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -251,85 +251,85 @@
                     <Label x:Name="MiniTurboString" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="809,301,0,-3" Width="102"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Collapsed">
+            <TabItem x:Name="Clan_War_Table" Header="Table" Visibility="Collapsed" LayoutUpdated="TabItemLayoutUpdated">
                 <Grid>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Clan Name" VerticalAlignment="Top" Width="120" Margin="147,33,0,0"/>
-                    <TextBox x:Name="TagA" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Tag" VerticalAlignment="Top" Width="120" Margin="147,61,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="120" Margin="10,114,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="120" Margin="10,142,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="120" Margin="10,170,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="120" Margin="10,198,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="120" Margin="10,226,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 6" VerticalAlignment="Top" Width="120" Margin="10,254,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="120" Margin="778,114,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="120" Margin="778,142,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="120" Margin="778,170,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="120" Margin="778,198,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="120" Margin="778,226,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 6" VerticalAlignment="Top" Width="120" Margin="778,254,0,0"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Clan Name" VerticalAlignment="Top" Width="120" Margin="638,33,0,0"/>
-                    <TextBox x:Name="TagB" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Tag" VerticalAlignment="Top" Width="120" Margin="638,61,0,0"/>
-                    <TextBox x:Name="Player1GP1A" HorizontalAlignment="Left" Height="23" Margin="135,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player1GP2A" HorizontalAlignment="Left" Height="23" Margin="199,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player1GP3A" HorizontalAlignment="Left" Height="23" Margin="262,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player2GP1A" HorizontalAlignment="Left" Height="23" Margin="135,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player2GP2A" HorizontalAlignment="Left" Height="23" Margin="199,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player2GP3A" HorizontalAlignment="Left" Height="23" Margin="262,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player3GP1A" HorizontalAlignment="Left" Height="23" Margin="135,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player3GP2A" HorizontalAlignment="Left" Height="23" Margin="199,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player3GP3A" HorizontalAlignment="Left" Height="23" Margin="262,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player4GP1A" HorizontalAlignment="Left" Height="23" Margin="135,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player4GP2A" HorizontalAlignment="Left" Height="23" Margin="199,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player4GP3A" HorizontalAlignment="Left" Height="23" Margin="262,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player5GP1A" HorizontalAlignment="Left" Height="23" Margin="135,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player5GP2A" HorizontalAlignment="Left" Height="23" Margin="199,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player5GP3A" HorizontalAlignment="Left" Height="23" Margin="262,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player6GP1A" HorizontalAlignment="Left" Height="23" Margin="135,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player6GP2A" HorizontalAlignment="Left" Height="23" Margin="199,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player6GP3A" HorizontalAlignment="Left" Height="23" Margin="262,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player1GP3B" HorizontalAlignment="Left" Height="23" Margin="591,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player1GP2B" HorizontalAlignment="Left" Height="23" Margin="653,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player1GP1B" HorizontalAlignment="Left" Height="23" Margin="716,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player2GP3B" HorizontalAlignment="Left" Height="23" Margin="591,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player2GP2B" HorizontalAlignment="Left" Height="23" Margin="653,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player2GP1B" HorizontalAlignment="Left" Height="23" Margin="716,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player3GP3B" HorizontalAlignment="Left" Height="23" Margin="591,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player3GP2B" HorizontalAlignment="Left" Height="23" Margin="653,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player3GP1B" HorizontalAlignment="Left" Height="23" Margin="716,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player4GP3B" HorizontalAlignment="Left" Height="23" Margin="591,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player4GP2B" HorizontalAlignment="Left" Height="23" Margin="653,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player4GP1B" HorizontalAlignment="Left" Height="23" Margin="716,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player5GP3B" HorizontalAlignment="Left" Height="23" Margin="591,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player5GP2B" HorizontalAlignment="Left" Height="23" Margin="653,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player5GP1B" HorizontalAlignment="Left" Height="23" Margin="716,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player6GP3B" HorizontalAlignment="Left" Height="23" Margin="591,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player6GP2B" HorizontalAlignment="Left" Height="23" Margin="653,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
-                    <TextBox x:Name="Player6GP1B" HorizontalAlignment="Left" Height="23" Margin="716,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
-                    <TextBox x:Name="Player1TotalA" HorizontalAlignment="Left" Height="23" Margin="346,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player2TotalA" HorizontalAlignment="Left" Height="23" Margin="346,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player3TotalA" HorizontalAlignment="Left" Height="23" Margin="346,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player4TotalA" HorizontalAlignment="Left" Height="23" Margin="346,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player5TotalA" HorizontalAlignment="Left" Height="23" Margin="346,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player6TotalA" HorizontalAlignment="Left" Height="23" Margin="346,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player1TotalB" HorizontalAlignment="Left" Height="23" Margin="510,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player2TotalB" HorizontalAlignment="Left" Height="23" Margin="510,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player3TotalB" HorizontalAlignment="Left" Height="23" Margin="510,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player4TotalB" HorizontalAlignment="Left" Height="23" Margin="510,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player5TotalB" HorizontalAlignment="Left" Height="23" Margin="510,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="Player6TotalB" HorizontalAlignment="Left" Height="23" Margin="510,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="GP1TotalA" HorizontalAlignment="Left" Height="23" Margin="135,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="GP2TotalA" HorizontalAlignment="Left" Height="23" Margin="199,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="GP3TotalA" HorizontalAlignment="Left" Height="23" Margin="262,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="GP3TotalB" HorizontalAlignment="Left" Height="23" Margin="591,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="GP2TotalB" HorizontalAlignment="Left" Height="23" Margin="653,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
-                    <TextBox x:Name="GP1TotalB" HorizontalAlignment="Left" Height="23" Margin="716,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Clan Name" VerticalAlignment="Top" Width="120" Margin="147,33,0,0"/>
+                    <TextBox Background="{x:Null}" x:Name="TagA" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Tag" VerticalAlignment="Top" Width="120" Margin="147,61,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="120" Margin="10,114,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="120" Margin="10,142,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="120" Margin="10,170,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="120" Margin="10,198,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="120" Margin="10,226,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 6" VerticalAlignment="Top" Width="120" Margin="10,254,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Width="120" Margin="778,114,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Width="120" Margin="778,142,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 3" VerticalAlignment="Top" Width="120" Margin="778,170,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 4" VerticalAlignment="Top" Width="120" Margin="778,198,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 5" VerticalAlignment="Top" Width="120" Margin="778,226,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Player 6" VerticalAlignment="Top" Width="120" Margin="778,254,0,0"/>
+                    <TextBox Background="{x:Null}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Clan Name" VerticalAlignment="Top" Width="120" Margin="638,33,0,0"/>
+                    <TextBox Background="{x:Null}" x:Name="TagB" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Tag" VerticalAlignment="Top" Width="120" Margin="638,61,0,0"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1GP1A" HorizontalAlignment="Left" Height="23" Margin="135,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1GP2A" HorizontalAlignment="Left" Height="23" Margin="199,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1GP3A" HorizontalAlignment="Left" Height="23" Margin="262,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2GP1A" HorizontalAlignment="Left" Height="23" Margin="135,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2GP2A" HorizontalAlignment="Left" Height="23" Margin="199,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2GP3A" HorizontalAlignment="Left" Height="23" Margin="262,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3GP1A" HorizontalAlignment="Left" Height="23" Margin="135,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3GP2A" HorizontalAlignment="Left" Height="23" Margin="199,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3GP3A" HorizontalAlignment="Left" Height="23" Margin="262,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4GP1A" HorizontalAlignment="Left" Height="23" Margin="135,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4GP2A" HorizontalAlignment="Left" Height="23" Margin="199,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4GP3A" HorizontalAlignment="Left" Height="23" Margin="262,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5GP1A" HorizontalAlignment="Left" Height="23" Margin="135,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5GP2A" HorizontalAlignment="Left" Height="23" Margin="199,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5GP3A" HorizontalAlignment="Left" Height="23" Margin="262,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6GP1A" HorizontalAlignment="Left" Height="23" Margin="135,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6GP2A" HorizontalAlignment="Left" Height="23" Margin="199,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6GP3A" HorizontalAlignment="Left" Height="23" Margin="262,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1GP3B" HorizontalAlignment="Left" Height="23" Margin="591,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1GP2B" HorizontalAlignment="Left" Height="23" Margin="653,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1GP1B" HorizontalAlignment="Left" Height="23" Margin="716,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2GP3B" HorizontalAlignment="Left" Height="23" Margin="591,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2GP2B" HorizontalAlignment="Left" Height="23" Margin="653,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2GP1B" HorizontalAlignment="Left" Height="23" Margin="716,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3GP3B" HorizontalAlignment="Left" Height="23" Margin="591,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3GP2B" HorizontalAlignment="Left" Height="23" Margin="653,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3GP1B" HorizontalAlignment="Left" Height="23" Margin="716,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4GP3B" HorizontalAlignment="Left" Height="23" Margin="591,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4GP2B" HorizontalAlignment="Left" Height="23" Margin="653,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4GP1B" HorizontalAlignment="Left" Height="23" Margin="716,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5GP3B" HorizontalAlignment="Left" Height="23" Margin="591,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5GP2B" HorizontalAlignment="Left" Height="23" Margin="653,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5GP1B" HorizontalAlignment="Left" Height="23" Margin="716,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6GP3B" HorizontalAlignment="Left" Height="23" Margin="591,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6GP2B" HorizontalAlignment="Left" Height="23" Margin="653,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="56"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6GP1B" HorizontalAlignment="Left" Height="23" Margin="716,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1TotalA" HorizontalAlignment="Left" Height="23" Margin="346,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2TotalA" HorizontalAlignment="Left" Height="23" Margin="346,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3TotalA" HorizontalAlignment="Left" Height="23" Margin="346,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4TotalA" HorizontalAlignment="Left" Height="23" Margin="346,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5TotalA" HorizontalAlignment="Left" Height="23" Margin="346,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6TotalA" HorizontalAlignment="Left" Height="23" Margin="346,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player1TotalB" HorizontalAlignment="Left" Height="23" Margin="510,114,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player2TotalB" HorizontalAlignment="Left" Height="23" Margin="510,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player3TotalB" HorizontalAlignment="Left" Height="23" Margin="510,170,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player4TotalB" HorizontalAlignment="Left" Height="23" Margin="510,198,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player5TotalB" HorizontalAlignment="Left" Height="23" Margin="510,226,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="Player6TotalB" HorizontalAlignment="Left" Height="23" Margin="510,254,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="GP1TotalA" HorizontalAlignment="Left" Height="23" Margin="135,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="GP2TotalA" HorizontalAlignment="Left" Height="23" Margin="199,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="GP3TotalA" HorizontalAlignment="Left" Height="23" Margin="262,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="GP3TotalB" HorizontalAlignment="Left" Height="23" Margin="591,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="GP2TotalB" HorizontalAlignment="Left" Height="23" Margin="653,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
+                    <TextBox Background="{x:Null}" x:Name="GP1TotalB" HorizontalAlignment="Left" Height="23" Margin="716,282,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsEnabled="False"/>
                     <Label x:Name="TagNames" Content="Tag vs Tag" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="272,0,0,0" Height="109" Width="361" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
                     <Label Foreground ="Blue" x:Name="ScoreA" Content="" HorizontalAlignment="Left" Margin="408,114,0,0" VerticalAlignment="Top" Height="79" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light" FontSize="20"/>
                     <Label Foreground ="Red" x:Name="ScoreB" Content="" HorizontalAlignment="Left" Margin="456,114,0,0" VerticalAlignment="Top" Height="79" Width="49" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Light" FontSize="20"/>
                     <Label x:Name="Diff" Content="" HorizontalAlignment="Left" Margin="408,198,0,0" VerticalAlignment="Top" Height="79" Width="97" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer" Visibility="Collapsed">
+            <TabItem x:Name="Time_Trial_Viewer" Header="TT Viewer" Visibility="Collapsed" LayoutUpdated="TabItemLayoutUpdated">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="152*"/>
@@ -385,12 +385,12 @@
                     <Image x:Name="MKTVCharacterIcon" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="32" Margin="777,63,0,0"/>
                     <Image x:Name="MiiversePost" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="147" Margin="777,100,0,0" Source="Images/MK8ATTV/miiverse.png" Stretch="Fill" Grid.ColumnSpan="2" Visibility="Hidden"/>
                     <Label x:Name="MKTVGameMode" Content="" HorizontalAlignment="Left" Margin="814,63,0,0" VerticalAlignment="Top" Height="32" Width="110" FontFamily="Segoe UI Light" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-                    <DatePicker x:Name="UploadedAfter" HorizontalAlignment="Left" Margin="9,34,0,0" VerticalAlignment="Top" Width="67" Text="From:" FirstDayOfWeek="Monday" DisplayDate="2014-08-07" DisplayDateStart="2014-08-07" HorizontalContentAlignment="Center"/>
+                    <DatePicker x:Name="UploadedAfter" HorizontalAlignment="Left" Margin="9,34,0,0" VerticalAlignment="Top" Width="67" Text="From:" FirstDayOfWeek="Monday" DisplayDate="2014-08-07" DisplayDateStart="2014-08-07" HorizontalContentAlignment="Center" Background="White"/>
                     <Label Content="Uploaded between:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <DatePicker x:Name="UploadedBefore" HorizontalAlignment="Left" Margin="82,34,0,0" VerticalAlignment="Top" Width="67" Text="From:" FirstDayOfWeek="Monday" DisplayDate="2020-01-01" DisplayDateStart="2014-08-07" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="SearchNNID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,78,0,0"/>
+                    <DatePicker x:Name="UploadedBefore" HorizontalAlignment="Left" Margin="82,34,0,0" VerticalAlignment="Top" Width="67" Text="From:" FirstDayOfWeek="Monday" DisplayDate="2020-01-01" DisplayDateStart="2014-08-07" HorizontalContentAlignment="Center" Foreground="Black" Background="White"/>
+                    <TextBox Background="{x:Null}" x:Name="SearchNNID" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,78,0,0"/>
                     <Label Content="Nintendo Network ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
-                    <TextBox x:Name="SearchMiiName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,121,0,0"/>
+                    <TextBox Background="{x:Null}" x:Name="SearchMiiName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Margin="10,121,0,0"/>
                     <Label Content="In-Game Nickname" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,98,0,0" Height="27" Width="139" FontFamily="Segoe UI Light" HorizontalContentAlignment="Center"/>
                     <ComboBox x:Name="TrackSearch" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="10,165,0,0" SelectionChanged="ComboBox_SelectionChanged_1" SelectedIndex="0">
                         <ListBoxItem Content=""/>
@@ -475,7 +475,7 @@
                     <Button x:Name="SearchButton" Content="&#xF002;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Height="37" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="30" Margin="10,285,0,0"/>
                     <Button x:Name="ShowFavsButton" Content="&#xF02E;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="64,291,0,0"/>
                     <Button x:Name="AddRemoveFavsButton" Content="&#xF055;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="94,291,0,0"/>
-                    <Button x:Name="ShareButton" Content="&#xF1E0;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="124,291,0,0" IsEnabled="False"/>
+                    <Button x:Name="ShareButton" Content="&#xF1E0;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" Height="25" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="24" Margin="124,291,0,0" Visibility="Hidden"/>
                     <ListView x:Name="SearchResults" HorizontalAlignment="Left" Height="306" VerticalAlignment="Top" Width="485" Margin="154,10,0,0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}">
                         <ListView.View>
                             <GridView>
