@@ -71,6 +71,8 @@
                     <Label Content="Time Trial Viewer" HorizontalAlignment="Left" Margin="486,192,0,0" VerticalAlignment="Top"/>
                     <Label Content="MKTV Database" HorizontalAlignment="Left" Margin="486,221,0,0" VerticalAlignment="Top"/>
                     <Label Content="Choose what tool loads on start-up" HorizontalAlignment="Left" Margin="311,132,0,0" VerticalAlignment="Top" Width="290" FontSize="16" HorizontalContentAlignment="Center"/>
+                    <Label Content="&#xF1da;" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="45"/>
+                    <Label Content="Reset Background" HorizontalAlignment="Left" Margin="62,193,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="44" VerticalContentAlignment="Center"/>
 
                 </Grid>
             </TabItem>
