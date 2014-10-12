@@ -84,6 +84,24 @@
             DarkThemeSelected()
         End If
     End Sub
+
+    Private Sub ChangeBackground(sender As Object, e As MouseButtonEventArgs) Handles ChangeBackgroundButton.MouseDown
+        MsgBox("test")
+        Dim dialog As New Microsoft.Win32.OpenFileDialog
+        dialog.Filter = "Image files (.jpg, .jpeg, .png) | *.jpg; *.jpeg; *.png"
+        dialog.Multiselect = False
+
+        Dim result As Boolean = dialog.ShowDialog
+        If result Then
+            My.Settings.CustomBackgroundPath = dialog.FileName
+        End If
+
+    End Sub
+
+    Private Sub ResetBackground(sender As Object, e As MouseButtonEventArgs)
+
+    End Sub
+
 End Class
 
 

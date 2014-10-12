@@ -53,7 +53,7 @@
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="234" Margin="300,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
                     <Label Content="Themes" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
                     <Label x:Name="ThemeButton" Content="&#xf205;" HorizontalAlignment="Left" Margin="124,89,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="37" FontSize="28"/>
-                    <Label Content="&#xf07c;" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="37"/>
+                    <Label x:Name="ChangeBackgroundButton" Content="&#xf07c;" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="37"/>
                     <Label Content="Change Background" HorizontalAlignment="Left" Margin="62,146,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                     <Label Content="Dark Theme" HorizontalAlignment="Left" Margin="0,89,0,0" FontSize="20" Width="124" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
                     <Label Content="Light Theme" HorizontalAlignment="Left" Margin="171,89,0,0" FontSize="20" Width="124" VerticalAlignment="Top"/>
