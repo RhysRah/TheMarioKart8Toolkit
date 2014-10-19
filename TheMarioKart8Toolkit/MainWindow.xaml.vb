@@ -31,6 +31,7 @@ Class MainWindow
     Private Property NeedToChangeTheme As Boolean
 
     Private Delegate Sub TTRankingDelegate(ByVal id As Integer)
+    Public ShouldOpenPanel As Boolean
 
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
@@ -103,10 +104,25 @@ Class MainWindow
         Else
             EnableLightTheme()
         End If
+
+        ShouldOpenPanel = My.Settings.MenuBarOpenByDefault
+
+        If ShouldOpenPanel Then
+            BeginAnimation(WidthProperty, PanelOpen)
+            IsPanelOpen = True
+        End If
+
     End Sub
 
     Public Sub EnableLightTheme()
-        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BG.png", UriKind.Absolute)))
+
+        Dim BackgroundBrush As ImageBrush
+        If My.Settings.CustomBackgroundPath = "" Then
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BG.png", UriKind.Absolute)))
+        Else
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri(My.Settings.CustomBackgroundPath, UriKind.Absolute)))
+        End If
+
         BackgroundBrush.Stretch = Stretch.None
         MainWindowGrid.Background = BackgroundBrush
 
@@ -122,7 +138,14 @@ Class MainWindow
     End Sub
 
     Public Sub EnableDarkTheme()
-        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BGDark.png", UriKind.Absolute)))
+
+        Dim BackgroundBrush As ImageBrush
+        If My.Settings.CustomBackgroundPath = "" Then
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BGDark.png", UriKind.Absolute)))
+        Else
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri(My.Settings.CustomBackgroundPath, UriKind.Absolute)))
+        End If
+
         BackgroundBrush.Stretch = Stretch.None
         MainWindowGrid.Background = BackgroundBrush
 

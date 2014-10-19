@@ -16,12 +16,22 @@
     End Sub
 
     Private Sub DragWindow(sender As Object, e As MouseButtonEventArgs)
-        DragMove()
+        Try
+            DragMove()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub DarkThemeSelected()
 
-        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BGDark.png", UriKind.Absolute)))
+        Dim BackgroundBrush As ImageBrush
+        If My.Settings.CustomBackgroundPath = "" Then
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BGDark.png", UriKind.Absolute)))
+        Else
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri(My.Settings.CustomBackgroundPath, UriKind.Absolute)))
+        End If
         BackgroundBrush.Stretch = Stretch.None
         WindowBackground.Background = BackgroundBrush
         MainWindowSettings.MainWindowGrid.Background = BackgroundBrush
@@ -41,7 +51,13 @@
 
     End Sub
     Private Sub LightThemeSelected()
-        Dim BackgroundBrush As ImageBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BG.png", UriKind.Absolute)))
+
+        Dim BackgroundBrush As ImageBrush
+        If My.Settings.CustomBackgroundPath = "" Then
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri("pack://application:,,,/TheMarioKart8Toolkit;component/Images/BG.png", UriKind.Absolute)))
+        Else
+            BackgroundBrush = New ImageBrush(New BitmapImage(New Uri(My.Settings.CustomBackgroundPath, UriKind.Absolute)))
+        End If
         BackgroundBrush.Stretch = Stretch.None
         WindowBackground.Background = BackgroundBrush
         MainWindowSettings.MainWindowGrid.Background = BackgroundBrush
@@ -96,12 +112,34 @@
             My.Settings.Save()
         End If
 
+        LightThemeSelected()
     End Sub
 
-    Private Sub ResetBackground(sender As Object, e As MouseButtonEventArgs)
+    Private Sub ResetBackground(sender As Object, e As MouseButtonEventArgs) Handles ResetButton.MouseDown
+        My.Settings.CustomBackgroundPath = ""
+        My.Settings.Save()
+
+        LightThemeSelected()
+    End Sub
+
+    Private Sub ToggleMenuBarDefault(sender As Object, e As MouseButtonEventArgs) Handles MenuBarOpenButton.MouseDown
+        My.Settings.MenuBarOpenByDefault = Not My.Settings.MenuBarOpenByDefault
+        My.Settings.Save()
+        If My.Settings.MenuBarOpenByDefault Then
+            MenuBarOpenButton.Content = ChrW(&HF205)
+        Else
+            MenuBarOpenButton.Content = ChrW(&HF204)
+        End If
 
     End Sub
 
+    Private Sub WindowOpen(sender As Object, e As RoutedEventArgs)
+        If My.Settings.MenuBarOpenByDefault Then
+            MenuBarOpenButton.Content = ChrW(&HF205)
+        Else
+            MenuBarOpenButton.Content = ChrW(&HF204)
+        End If
+    End Sub
 End Class
 
 
