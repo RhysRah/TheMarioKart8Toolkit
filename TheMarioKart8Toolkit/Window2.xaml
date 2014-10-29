@@ -59,20 +59,17 @@
                     <Label Content="Light Theme" HorizontalAlignment="Left" Margin="171,89,0,0" FontSize="20" Width="124" VerticalAlignment="Top"/>
                     <Label Content="Ease Of Access" HorizontalAlignment="Left" Margin="311,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
                     <Label Content="Menu bar open by default" HorizontalAlignment="Left" Margin="353,61,0,0" FontSize="20" Width="238" VerticalAlignment="Top" HorizontalContentAlignment="Right"/>
-                    <Label Content="&#xF205;" HorizontalAlignment="Left" Margin="311,165,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
                     <Label x:Name="MenuBarOpenButton" Content="&#xF204;" HorizontalAlignment="Left" Margin="306,62,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="47" Height="36" FontSize="28"/>
-                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="311,193,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
-                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="311,221,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
-                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="453,193,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
-                    <Label Content="&#xF204;" HorizontalAlignment="Left" Margin="453,221,0,0" VerticalAlignment="Top" FontFamily="Fonts/#FontAwesome" Width="28" Height="23" FontSize="15"/>
-                    <Label Content="Homepage" HorizontalAlignment="Left" Margin="339,164,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Stats Calculator" HorizontalAlignment="Left" Margin="339,191,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Clan War Table" HorizontalAlignment="Left" Margin="339,220,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Time Trial Viewer" HorizontalAlignment="Left" Margin="486,192,0,0" VerticalAlignment="Top"/>
-                    <Label Content="MKTV Database" HorizontalAlignment="Left" Margin="486,221,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Choose what tool loads on start-up" HorizontalAlignment="Left" Margin="311,132,0,0" VerticalAlignment="Top" Width="290" FontSize="16" HorizontalContentAlignment="Center"/>
+                    <Label Content="Choose what tool loads on start-up" HorizontalAlignment="Left" Margin="301,132,-0.8,0" VerticalAlignment="Top" Width="300" FontSize="16" HorizontalContentAlignment="Center"/>
                     <Label x:Name="ResetButton" Content="&#xF1da;" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="47" FontFamily="Fonts/#FontAwesome" FontSize="36" Height="45"/>
                     <Label Content="Reset Background" HorizontalAlignment="Left" Margin="62,193,0,0" FontSize="20" Width="233" VerticalAlignment="Top" HorizontalContentAlignment="Right" Height="44" VerticalContentAlignment="Center"/>
+                    <ComboBox x:Name="StartupToolSelector" HorizontalAlignment="Left" Margin="311,183,0,0" VerticalAlignment="Top" Width="279" Height="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged_1">
+                        <ListBoxItem Content="Homepage"/>
+                        <ListBoxItem Content="Stats Calculator"/>
+                        <ListBoxItem Content="Clan War Table"/>
+                        <ListBoxItem Content="Time Trials Viewer"/>
+                        <ListBoxItem Content="MKTV Database"/>
+                    </ComboBox>
 
                 </Grid>
             </TabItem>

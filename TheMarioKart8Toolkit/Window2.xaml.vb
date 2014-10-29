@@ -139,6 +139,14 @@
         Else
             MenuBarOpenButton.Content = ChrW(&HF204)
         End If
+
+        StartupToolSelector.SelectedIndex = My.Settings.DefaultTab
+
+    End Sub
+
+    Private Sub ComboBox_SelectionChanged_1(sender As Object, e As SelectionChangedEventArgs)
+        My.Settings.DefaultTab = StartupToolSelector.SelectedIndex
+        My.Settings.Save()
     End Sub
 End Class
 

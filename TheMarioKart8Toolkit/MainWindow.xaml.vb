@@ -36,6 +36,10 @@ Class MainWindow
 #Region "Main Window"
     Private Sub AppStart(sender As Object, e As RoutedEventArgs)
 
+        Timer = New DispatcherTimer()
+        timer.Interval = New TimeSpan(0, 0, 0, 0, 500)
+        AddHandler timer.Tick, AddressOf OpenPanel
+
         Dim AppVer As String = "1011.29082014"
         AppVersion.Content = "Build " & AppVer
 
@@ -108,9 +112,11 @@ Class MainWindow
         ShouldOpenPanel = My.Settings.MenuBarOpenByDefault
 
         If ShouldOpenPanel Then
-            BeginAnimation(WidthProperty, PanelOpen)
             IsPanelOpen = True
+            timer.Start()
         End If
+
+        MainWindowTabControl.SelectedIndex = My.Settings.DefaultTab
 
     End Sub
 
@@ -988,6 +994,12 @@ Class MainWindow
             NeedToChangeTheme = False
         End If
     End Sub
+
+    Private Sub OpenPanel(sender As Object, e As EventArgs)
+        BeginAnimation(WidthProperty, PanelOpen)
+        Timer.Stop()
+    End Sub
+
 End Class
 
 Public Class VideoListItem
