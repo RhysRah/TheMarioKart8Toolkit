@@ -62,7 +62,7 @@
             <TabItem x:Name="Homepage" Header="Homepage" Visibility="Collapsed" LayoutUpdated="TabItemLayoutUpdated">
                 <Grid>
                     <Label Margin="10,10,9.6,9.6">
-                        <TextBlock FontFamily="Segoe UI Light" FontSize="22"><Run Text="Welcome to The Mario Kart 8 App! This app includes many useful tools for Mario"/><Run Text=" Kart 8:"/><LineBreak/><LineBreak/><Run Text="- Stats Calculator"/><LineBreak/><Run Text="- Clan War Table"/><LineBreak/><Run Text="- Time Trial Viewer"/><LineBreak/><Run Text="- MKTV Database"/><LineBreak/><LineBreak/><Run Text="Many updates will be released over time."/><LineBreak/><Run Text="Enjoy!"/></TextBlock>
+                        <TextBlock FontFamily="Segoe UI Light" FontSize="22"><Run Text="Welcome to The Mario Kart 8 App! This app includes many useful tools for Mario"/><Run Text=" Kart 8:"/><LineBreak/><LineBreak/><Run Text="- Stats Calculator"/><LineBreak/><Run Text="- Clan War Table"/><LineBreak/><Run Text="- Time Trial Viewer"/><LineBreak/><Run Text="- MKTV Database"/><LineBreak/><LineBreak/><Run Text="Many updates will be released over time."/><LineBreak/><Run Text="Enjoy!"/> <LineBreak/> <Run Text="If you're seeing this, it means you didn't register your NNID with Mario Kart"></Run></TextBlock>
                     </Label>
                 </Grid>
             </TabItem>
@@ -489,6 +489,11 @@
                         </ListView.View>
                     </ListView>
                     <WebBrowser x:Name="MKTVYoutubeVideo" Margin="644,158,10,10" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="MKRS" Header="MKTV" Visibility="Collapsed" Height="20" VerticalAlignment="Top">
+                <Grid>
+
                 </Grid>
             </TabItem>
         </TabControl>

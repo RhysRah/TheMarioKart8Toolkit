@@ -70,11 +70,23 @@
                         <ListBoxItem Content="Time Trials Viewer"/>
                         <ListBoxItem Content="MKTV Database"/>
                     </ComboBox>
+                    <Label Content="Themes" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="290" FontSize="20" HorizontalContentAlignment="Center"/>
 
                 </Grid>
             </TabItem>
             <TabItem x:Name="AccountTab" Header="Account">
-                <Grid/>
+                <Grid>
+                    <Label Content="Set up automatic login for Mario Kart Ranking System" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="580" FontSize="20" HorizontalContentAlignment="Center"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="155" Margin="300,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="1"/>
+                    <TextBox x:Name="RegisterNNID" HorizontalAlignment="Left" Height="51" Margin="10,110,0,0" TextWrapping="Wrap" Text="NNID" VerticalAlignment="Top" Width="285" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="Register new account" Margin="10,52,305,0" VerticalAlignment="Top" FontSize="20" HorizontalContentAlignment="Center"/>
+                    <Label Content="Use Sync Key" Margin="306,52,9,0" VerticalAlignment="Top" FontSize="20" HorizontalContentAlignment="Center"/>
+                    <Button x:Name="GetPassButton" Content="Request Sync Key (to use this NNID on another computer)" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top" Width="580" Height="30" Background="Black" Foreground="#FF0017FF"/>
+                    <TextBox x:Name="LoginNNID" HorizontalAlignment="Left" Height="23" Margin="306,110,0,0" TextWrapping="Wrap" Text="NNID" VerticalAlignment="Top" Width="285" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="LoginPass" MaxLines="1" HorizontalAlignment="Left" Height="23" Margin="306,138,0,0" TextWrapping="Wrap" Text="Sync Key" VerticalAlignment="Top" Width="285" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="9"/>
+                    <Button x:Name="RegisterButton" Content="&#xf090;" HorizontalAlignment="Left" Margin="129,166,0,45" Width="45" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="36"/>
+                    <Button x:Name="LoginButton" Content="&#xf090;" HorizontalAlignment="Left" Margin="428,166,0,0" VerticalAlignment="Top" Width="40" Height="41" FontFamily="/TheMarioKart8Toolkit;component/Fonts/#FontAwesome" FontSize="36"/>
+                </Grid>
             </TabItem>
         </TabControl>
         <Label Content="&#xf007;" HorizontalAlignment="Left" Margin="18,247,0,0" VerticalAlignment="Top" Width="90" Height="90" FontFamily="/Fonts/#FontAwesome" FontSize="85" HorizontalContentAlignment="Center"/>

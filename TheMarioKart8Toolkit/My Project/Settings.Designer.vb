@@ -100,6 +100,30 @@ Partial Friend NotInheritable Class MySettings
             Me("DefaultTab") = value
         End Set
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(), _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.Configuration.DefaultSettingValueAttribute("")> _
+    Public Property NNID() As String
+        Get
+            Return CType(Me("NNID"), String)
+        End Get
+        Set(value As String)
+            Me("NNID") = value
+        End Set
+    End Property
+
+    <Global.System.Configuration.UserScopedSettingAttribute(), _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+     Global.System.Configuration.DefaultSettingValueAttribute("")> _
+    Public Property SyncKey() As String
+        Get
+            Return CType(Me("SyncKey"), String)
+        End Get
+        Set(value As String)
+            Me("SyncKey") = value
+        End Set
+    End Property
 End Class
 
 Namespace My
